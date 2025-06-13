@@ -110,6 +110,10 @@ app.get('/ai-picks', async (req, res) => {
   const picks = await getTopStockPredictions();
   res.json(picks);
 });
+app.get('/fetch-now', async (req, res) => {
+  await fetchAndCache('stock_market/gainers');
+  res.send('Gainers fetched and cached manually.');
+});
 
 // Start server
 app.listen(PORT, () => {
