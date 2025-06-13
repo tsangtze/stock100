@@ -1,0 +1,15 @@
+{
+  "date": "2025-06-11",
+  "picks": [
+    { "symbol": "AAPL", "score": 92.3 },
+    { "symbol": "MSFT", "score": 89.5 },
+    { "symbol": "NVDA", "score": 88.7 },
+    { "symbol": "GOOGL", "score": 87.1 },
+    { "symbol": "AMZN", "score": 85.4 },
+    { "symbol": "TSLA", "score": 83.6 },
+    { "symbol": "META", "score": 82.3 },
+    { "symbol": "AVGO", "score": 81.0 },
+    { "symbol": "AMD", "score": 79.8 },
+    { "symbol": "CRM", "score": 78.2 }
+  ]
+}
