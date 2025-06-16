@@ -7,7 +7,7 @@ const cron = require('node-cron');
 const fs = require('fs');
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const API_KEY = 'HiMYIrmgSPwjGAnSLTP2luGvKu9MKIye';
 
 app.use(cors());
@@ -80,14 +80,14 @@ cron.schedule('*/6 * * * 1-5', () => {
 cron.schedule('*/30 * * * 1-5', () => {
   if (isMarketOpen()) endpoints.group2.forEach(fetchAndCache);
 });
-cron.schedule('0 7,10,12 * * 1-5', () => {
-  if (isMarketOpen()) endpoints.group3.forEach(fetchAndCache);
+cron.schedule('0 14,19 * * 1-5', () => {
+  endpoints.group3.forEach(fetchAndCache);
 });
 cron.schedule('0 8 * * 1-5', () => {
   if (isMarketOpen()) endpoints.group4.forEach(fetchAndCache);
 });
 
-// JSON route: Top Gainers
+// JSON Routes
 app.get('/stocks', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
@@ -99,23 +99,132 @@ app.get('/stocks', (req, res) => {
         : '0.00'
     }));
     res.json(top100);
-  } catch (e) {
+  } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
 
-// JSON route: AI Picks
 const { getTopStockPredictions } = require('./aiModel');
 app.get('/ai-picks', async (req, res) => {
   const picks = await getTopStockPredictions();
   res.json(picks);
 });
+
+// Manual fetch endpoint
 app.get('/fetch-now', async (req, res) => {
   await fetchAndCache('stock_market/gainers');
   res.send('Gainers fetched and cached manually.');
 });
 
-// Start server
+// 🔄 Additional Routes
+app.get('/losers', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/volume', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/rsi-high', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_desc.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/rsi-low', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_asc.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/gapup', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_up.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/gapdown', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_down.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/news-positive', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_news_sentiment_positive.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/news-negative', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_news_sentiment_negative.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/ipo', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_price.json')); // placeholder
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/pe-ratio', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/ratios-ttm_sort_peRatio_limit_50.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/watchlist', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_watchlist.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+app.get('/', (req, res) => {
+  res.send('✅ Backend is working!');
+});
+
+// Fallback 404
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
+// Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
 });
