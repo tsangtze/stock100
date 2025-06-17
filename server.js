@@ -64,8 +64,8 @@ async function fetchAndCache(endpoint) {
     console.log('🌐 Fetching:', url);
     const response = await fetch(url);
     const data = await response.json();
-    const filename = endpoint.replace(/[/?=&]/g, '_') + '.json';
 
+    const filename = endpoint.replace(/[/?=&]/g, '_') + '.json';
     fs.writeFileSync(`./cache/${filename}`, JSON.stringify(data));
     console.log(`✅ Cached ${endpoint}`);
   } catch (err) {
@@ -87,9 +87,8 @@ cron.schedule('0 8 * * 1-5', () => {
   if (isMarketOpen()) endpoints.group4.forEach(fetchAndCache);
 });
 
-// JSON Routes
+// Routes
 app.get('/gainers', (req, res) => {
-
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
     const top100 = data.slice(0, 100).map(item => ({
@@ -100,7 +99,8 @@ app.get('/gainers', (req, res) => {
         : '0.00'
     }));
     res.json(top100);
-  } catch {
+  } catch (err) {
+    console.error('❌ /gainers failed:', err);
     res.status(500).json({ error: 'No data available' });
   }
 });
@@ -116,8 +116,41 @@ app.get('/ai-picks', async (req, res) => {
   }
 });
 
+app.get('/losers', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
+    const top100 = data.slice(0, 100).map(item => ({
+      symbol: item.symbol,
+      name: item.name || item.companyName || 'N/A',
+      changePercent: typeof item.changesPercentage === 'number'
+        ? item.changesPercentage.toFixed(2)
+        : '0.00'
+    }));
+    res.json(top100);
+  } catch (err) {
+    console.error('❌ /losers failed:', err);
+    res.status(500).json({ error: 'No data available' });
+  }
+});
 
-// Manual fetch endpoint
+app.get('/volume', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
+    const top100 = data.slice(0, 100).map(item => ({
+      symbol: item.symbol,
+      name: item.name || item.companyName || 'N/A',
+      changePercent: typeof item.changesPercentage === 'number'
+        ? item.changesPercentage.toFixed(2)
+        : '0.00'
+    }));
+    res.json(top100);
+  } catch (err) {
+    console.error('❌ /volume failed:', err);
+    res.status(500).json({ error: 'No data available' });
+  }
+});
+
+// Manual fetch triggers
 app.get('/fetch-now', async (req, res) => {
   await fetchAndCache('stock_market/gainers');
   res.send('Gainers fetched and cached manually.');
@@ -127,41 +160,7 @@ app.get('/fetch-volume', async (req, res) => {
   res.send('Volume fetched and cached.');
 });
 
-// 🔄 Additional Routes
-app.get('/losers', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
-    const formatted = data.slice(0, 100).map(item => ({
-      symbol: item.symbol,
-      name: item.name || item.companyName || 'N/A',
-      changePercent: typeof item.changesPercentage === 'number'
-        ? item.changesPercentage.toFixed(2)
-        : '0.00'
-    }));
-    res.json(formatted);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-
-app.get('/volume', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
-    const formatted = data.slice(0, 100).map(item => ({
-      symbol: item.symbol,
-      name: item.name || item.companyName || 'N/A',
-      changePercent: typeof item.changesPercentage === 'number'
-        ? item.changesPercentage.toFixed(2)
-        : '0.00'
-    }));
-    res.json(formatted);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-
+// Extra routes
 app.get('/rsi-high', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_desc.json'));
@@ -218,7 +217,7 @@ app.get('/news-negative', (req, res) => {
 
 app.get('/ipo', (req, res) => {
   try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_price.json')); // placeholder
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_price.json'));
     res.json(data);
   } catch {
     res.status(500).json({ error: 'No data available' });
@@ -242,16 +241,17 @@ app.get('/watchlist', (req, res) => {
     res.status(500).json({ error: 'No data available' });
   }
 });
+
 app.get('/', (req, res) => {
   res.send('✅ Backend is working!');
 });
 
-// Fallback 404
+// Fallback route
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-// Start Server
+// Start
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
 });
