@@ -1,4 +1,7 @@
 node_modules/
 .env
 ai_picks.json
-cache/
+
+# Ignore everything inside cache/ except the volume file
+/cache/*
+!/cache/stock_market_dollar_volume.json
