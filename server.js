@@ -122,6 +122,10 @@ app.get('/fetch-now', async (req, res) => {
   await fetchAndCache('stock_market/gainers');
   res.send('Gainers fetched and cached manually.');
 });
+app.get('/fetch-volume', async (req, res) => {
+  await fetchAndCache('stock_market/dollar_volume');
+  res.send('Volume fetched and cached.');
+});
 
 // 🔄 Additional Routes
 app.get('/losers', (req, res) => {
