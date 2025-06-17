@@ -1,1 +1,1 @@
-﻿[{"symbol": "AAPL", "name": "Apple Inc.", "dollarVolume": 145000000}, {"symbol": "MSFT", "name": "Microsoft Corp", "dollarVolume": 120000000}]
+﻿[{ "symbol": "AAPL", "name": "Apple Inc.", "changesPercentage": 2.15 }, { "symbol": "MSFT", "name": "Microsoft Corp", "changesPercentage": -0.85 }]
