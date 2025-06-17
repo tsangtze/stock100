@@ -1,8 +1,5 @@
-const express = require('express');
 const fs = require('fs');
 const fetch = require('node-fetch');
-const app = express();
-const PORT = 4000;
 
 const API_KEY = 'HiMYIrmgSPwjGAnSLTP2luGvKu9MKIye';
 const BASE = 'https://financialmodelingprep.com/api/v3';
@@ -19,9 +16,11 @@ function getBuyTag(score) {
   if (score >= 60) return { tag: "Positive to Buy", color: "#66cdaa" };
   return { tag: "Buy", color: "#98fb98" };
 }
+
 async function getTopStockPredictions() {
   const today = new Date().toISOString().split('T')[0];
 
+  // Return cached picks if available
   if (fs.existsSync(CACHE_FILE)) {
     const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
     if (cached.date === today) {
@@ -121,39 +120,6 @@ async function getTopStockPredictions() {
     return [];
   }
 }
-app.get('/ai-picks', async (req, res) => {
-  const picks = await getTopStockPredictions();
-  res.json(picks);
-});
-// ✅ Mock data for /gainers, /losers, /volume
-const mockStocks = [
-  { symbol: 'AAPL', name: 'Apple Inc.', changePercent: 3.1, volume: 1500000 },
-  { symbol: 'MSFT', name: 'Microsoft Corp.', changePercent: 2.8, volume: 1400000 },
-  { symbol: 'GOOG', name: 'Alphabet Inc.', changePercent: 2.4, volume: 1350000 },
-  { symbol: 'NVDA', name: 'NVIDIA Corp.', changePercent: 4.1, volume: 1600000 },
-  { symbol: 'TSLA', name: 'Tesla Inc.', changePercent: 3.9, volume: 1700000 },
-  { symbol: 'META', name: 'Meta Platforms', changePercent: 2.6, volume: 1250000 },
-  { symbol: 'AMZN', name: 'Amazon.com Inc.', changePercent: 2.3, volume: 1200000 },
-  { symbol: 'NFLX', name: 'Netflix Inc.', changePercent: 2.9, volume: 1190000 },
-  { symbol: 'CRM', name: 'Salesforce', changePercent: 1.7, volume: 1100000 },
-  { symbol: 'INTC', name: 'Intel Corp.', changePercent: 1.2, volume: 1150000 }
-];
 
-app.get('/gainers', (req, res) => {
-  const sorted = [...mockStocks].sort((a, b) => b.changePercent - a.changePercent);
-  res.json(sorted);
-});
-
-app.get('/losers', (req, res) => {
-  const sorted = [...mockStocks].sort((a, b) => a.changePercent - b.changePercent);
-  res.json(sorted);
-});
-
-app.get('/volume', (req, res) => {
-  const sorted = [...mockStocks].sort((a, b) => b.volume - a.volume);
-  res.json(sorted);
-});
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log(`✅ Stock100 backend running on http://localhost:${PORT}`);
-});
+// ✅ Export correctly
+module.exports = { getTopStockPredictions };
