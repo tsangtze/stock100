@@ -106,9 +106,15 @@ app.get('/stocks', (req, res) => {
 
 const { getTopStockPredictions } = require('./aiModel');
 app.get('/ai-picks', async (req, res) => {
-  const picks = await getTopStockPredictions();
-  res.json(picks);
+  try {
+    const picks = await getTopStockPredictions();
+    res.json(picks);
+  } catch (err) {
+    console.error('❌ /ai-picks failed:', err);
+    res.status(500).json({ error: 'AI picks failed', message: err.message });
+  }
 });
+
 
 // Manual fetch endpoint
 app.get('/fetch-now', async (req, res) => {
