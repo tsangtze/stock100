@@ -88,7 +88,8 @@ cron.schedule('0 8 * * 1-5', () => {
 });
 
 // JSON Routes
-app.get('/stocks', (req, res) => {
+app.get('/gainers', (req, res) => {
+
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
     const top100 = data.slice(0, 100).map(item => ({
@@ -126,20 +127,36 @@ app.get('/fetch-now', async (req, res) => {
 app.get('/losers', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
-    res.json(data);
+    const formatted = data.slice(0, 100).map(item => ({
+      symbol: item.symbol,
+      name: item.name || item.companyName || 'N/A',
+      changePercent: typeof item.changesPercentage === 'number'
+        ? item.changesPercentage.toFixed(2)
+        : '0.00'
+    }));
+    res.json(formatted);
   } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
 
+
 app.get('/volume', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
-    res.json(data);
+    const formatted = data.slice(0, 100).map(item => ({
+      symbol: item.symbol,
+      name: item.name || item.companyName || 'N/A',
+      changePercent: typeof item.changesPercentage === 'number'
+        ? item.changesPercentage.toFixed(2)
+        : '0.00'
+    }));
+    res.json(formatted);
   } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
+
 
 app.get('/rsi-high', (req, res) => {
   try {
