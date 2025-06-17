@@ -8,7 +8,9 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-const API_KEY = 'HiMYIrmgSPwjGAnSLTP2luGvKu9MKIye';
+require('dotenv').config();
+const API_KEY = process.env.FMP_API_KEY;
+
 
 app.use(cors());
 app.use(express.json());
@@ -134,21 +136,30 @@ app.get('/losers', (req, res) => {
 });
 
 app.get('/volume', (req, res) => {
+  const filePath = './cache/stock_market_dollar_volume.json';
+  console.log('📂 Attempting to read:', filePath);
+
   try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
-    const top100 = data.slice(0, 100).map(item => ({
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    console.log('📄 File contents:', raw); // ✅ Add this debug line
+
+    const data = JSON.parse(raw);
+    const formatted = data.slice(0, 100).map(item => ({
       symbol: item.symbol,
       name: item.name || item.companyName || 'N/A',
       changePercent: typeof item.changesPercentage === 'number'
         ? item.changesPercentage.toFixed(2)
         : '0.00'
     }));
-    res.json(top100);
+
+    res.json(formatted);
   } catch (err) {
-    console.error('❌ /volume failed:', err);
+    console.error('❌ Failed to read /volume:', err.message);
     res.status(500).json({ error: 'No data available' });
   }
 });
+
+
 
 // Manual fetch triggers
 app.get('/fetch-now', async (req, res) => {
