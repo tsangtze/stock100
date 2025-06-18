@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 4000;
 require('dotenv').config();
 const API_KEY = process.env.FMP_API_KEY;
 
-
 app.use(cors());
 app.use(express.json());
 
@@ -135,40 +134,39 @@ app.get('/losers', (req, res) => {
   }
 });
 
+// ✅ Live /volume route with cached real data
 app.get('/volume', (req, res) => {
-  const filePath = './cache/stock_market_dollar_volume.json';
-  console.log('📂 Attempting to read:', filePath);
-
   try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    console.log('📄 File contents:', raw); // ✅ Add this debug line
-
-    const data = JSON.parse(raw);
-    const formatted = data.slice(0, 100).map(item => ({
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json', 'utf-8'));
+    const top100 = data.slice(0, 100).map(item => ({
       symbol: item.symbol,
       name: item.name || item.companyName || 'N/A',
       changePercent: typeof item.changesPercentage === 'number'
         ? item.changesPercentage.toFixed(2)
         : '0.00'
     }));
-
-    res.json(formatted);
+    res.json(top100);
   } catch (err) {
-    console.error('❌ Failed to read /volume:', err.message);
+    console.error('❌ /volume failed:', err.message);
     res.status(500).json({ error: 'No data available' });
   }
 });
 
+// ✅ Manual fetch trigger for /volume
+app.get('/fetch-volume', async (req, res) => {
+  try {
+    await fetchAndCache('stock_market/dollar_volume');
+    res.send('Volume fetched and cached.');
+  } catch (err) {
+    console.error('❌ /fetch-volume error:', err);
+    res.status(500).send('Failed to fetch volume data.');
+  }
+});
 
-
-// Manual fetch triggers
+// Manual fetch trigger for gainers
 app.get('/fetch-now', async (req, res) => {
   await fetchAndCache('stock_market/gainers');
   res.send('Gainers fetched and cached manually.');
-});
-app.get('/fetch-volume', async (req, res) => {
-  await fetchAndCache('stock_market/dollar_volume');
-  res.send('Volume fetched and cached.');
 });
 
 // Extra routes
