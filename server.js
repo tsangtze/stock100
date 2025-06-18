@@ -259,8 +259,14 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
-// Preload volume data on server startup (Render has no persistent cache)
-fetchAndCache('stock_market/dollar_volume');
+// Start
+app.listen(PORT, () => {
+  console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
+
+  // ✅ Preload volume data AFTER server has started
+  fetchAndCache('stock_market/dollar_volume');
+});
+
 
 // Start
 app.listen(PORT, () => {
