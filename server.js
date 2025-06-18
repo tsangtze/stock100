@@ -136,21 +136,34 @@ app.get('/losers', (req, res) => {
 
 // ✅ Live /volume route with cached real data
 app.get('/volume', (req, res) => {
+  const filePath = './cache/stock_market_dollar_volume.json';
+
   try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json', 'utf-8'));
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const data = JSON.parse(raw);
+
+    if (!Array.isArray(data)) {
+      console.error('❌ /volume failed: expected array but got:', typeof data);
+      return res.status(500).json({ error: 'Invalid volume data format' });
+    }
+
     const top100 = data.slice(0, 100).map(item => ({
       symbol: item.symbol,
       name: item.name || item.companyName || 'N/A',
-      changePercent: typeof item.changesPercentage === 'number'
-        ? item.changesPercentage.toFixed(2)
-        : '0.00'
+      changePercent:
+        typeof item.changesPercentage === 'number'
+          ? item.changesPercentage.toFixed(2)
+          : '0.00',
     }));
+
+    console.log('✅ /volume served successfully');
     res.json(top100);
   } catch (err) {
     console.error('❌ /volume failed:', err.message);
     res.status(500).json({ error: 'No data available' });
   }
 });
+
 
 // ✅ Manual fetch trigger for /volume
 app.get('/fetch-volume', async (req, res) => {
