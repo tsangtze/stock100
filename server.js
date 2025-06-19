@@ -1,71 +1,49 @@
-// server.js – Clean Backend for Stock100 with AI Picks and JSON Routes
+// server.js – Full Version with Cron Fetch + AI Picks + RSI + P/E + Sentiment Routes
 
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-const cron = require('node-cron');
 const fs = require('fs');
+const cron = require('node-cron');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-require('dotenv').config();
 const API_KEY = process.env.FMP_API_KEY;
+const BASE = 'https://financialmodelingprep.com/api/v3';
+
+const {
+  getTopStockPredictions,
+  getAIPicksBuy,
+  getAIPicksSell
+} = require('./aiModel');
 
 app.use(cors());
 app.use(express.json());
 
-// Ensure ./cache directory exists
 if (!fs.existsSync('./cache')) fs.mkdirSync('./cache');
 
-// Helpers
-function isWeekday() {
-  const day = new Date().getDay();
-  return day >= 1 && day <= 5;
+function getTodayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+function incrementFetchCounter() {
+  const file = './fetchCount.json';
+  const today = getTodayKey();
+  let data = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file)) : {};
+  data[today] = (data[today] || 0) + 1;
+  fs.writeFileSync(file, JSON.stringify(data, null, 2));
+  console.log(`📈 Fetch count for ${today}: ${data[today]}`);
 }
 
-function isMarketOpen() {
-  const now = new Date();
-  const hour = now.getHours();
-  const minute = now.getMinutes();
-  return hour > 6 && hour < 13 || (hour === 6 && minute >= 30);
-}
-
-// Endpoint Groups
-const endpoints = {
-  group1: ['stock_market/gainers', 'stock_market/losers'],
-  group2: ['stock_market/actives'],
-  group3: [
-    'stock_market/most_volatile',
-    'stock_market/unusual_volume',
-    'technical_indicator/rsi?period=14&type=stock&sort=desc',
-    'technical_indicator/rsi?period=14&type=stock&sort=asc'
-  ],
-  group4: [
-    'stock_news?sentiment=positive',
-    'stock_news?sentiment=negative',
-    'ratios-ttm?sort=peRatio&limit=50',
-    'stock_market/gap_up',
-    'stock_market/gap_down',
-    'stock-screener?sector=Technology&limit=50',
-    'stock-screener?sector=Renewable Energy&limit=50',
-    'stock_market/market_cap',
-    'stock_market/price',
-    'stock_market/dollar_volume',
-    'stock_market/watchlist'
-  ]
-};
-
-// Caching Logic
 async function fetchAndCache(endpoint) {
   try {
     const url = endpoint.includes('?')
-      ? `https://financialmodelingprep.com/api/v3/${endpoint}&apikey=${API_KEY}`
-      : `https://financialmodelingprep.com/api/v3/${endpoint}?apikey=${API_KEY}`;
-
+      ? `${BASE}/${endpoint}&apikey=${API_KEY}`
+      : `${BASE}/${endpoint}?apikey=${API_KEY}`;
     console.log('🌐 Fetching:', url);
-    const response = await fetch(url);
-    const data = await response.json();
-
+    const res = await fetch(url);
+    const data = await res.json();
+    incrementFetchCounter();
     const filename = endpoint.replace(/[/?=&]/g, '_') + '.json';
     fs.writeFileSync(`./cache/${filename}`, JSON.stringify(data));
     console.log(`✅ Cached ${endpoint}`);
@@ -74,121 +52,76 @@ async function fetchAndCache(endpoint) {
   }
 }
 
-// CRON Jobs
-cron.schedule('*/6 * * * 1-5', () => {
-  if (isMarketOpen()) endpoints.group1.forEach(fetchAndCache);
-});
-cron.schedule('*/30 * * * 1-5', () => {
-  if (isMarketOpen()) endpoints.group2.forEach(fetchAndCache);
-});
-cron.schedule('0 14,19 * * 1-5', () => {
-  endpoints.group3.forEach(fetchAndCache);
-});
-cron.schedule('0 8 * * 1-5', () => {
-  if (isMarketOpen()) endpoints.group4.forEach(fetchAndCache);
+// 🕒 Auto-fetch AI Picks at 10 AM and 3 PM ET (7 & 12 PT)
+cron.schedule('0 7,12 * * 1-5', async () => {
+  console.log('🧠 Cron job running for AI Picks...');
+  await getTopStockPredictions();
 });
 
 // Routes
-app.get('/gainers', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
-    const top100 = data.slice(0, 100).map(item => ({
-      symbol: item.symbol,
-      name: item.name || item.companyName || 'N/A',
-      changePercent: typeof item.changesPercentage === 'number'
-        ? item.changesPercentage.toFixed(2)
-        : '0.00'
-    }));
-    res.json(top100);
-  } catch (err) {
-    console.error('❌ /gainers failed:', err);
-    res.status(500).json({ error: 'No data available' });
-  }
-});
+app.get('/', (req, res) => res.send('✅ Backend is working!'));
 
-const { getTopStockPredictions } = require('./aiModel');
 app.get('/ai-picks', async (req, res) => {
   try {
     const picks = await getTopStockPredictions();
     res.json(picks);
   } catch (err) {
-    console.error('❌ /ai-picks failed:', err);
     res.status(500).json({ error: 'AI picks failed', message: err.message });
+  }
+});
+
+app.get('/ai-picks-buy', async (req, res) => {
+  try {
+    const picks = await getAIPicksBuy();
+    res.json(picks);
+  } catch (err) {
+    res.status(500).json({ error: 'AI Buy picks failed', message: err.message });
+  }
+});
+
+app.get('/ai-picks-sell', async (req, res) => {
+  try {
+    const picks = await getAIPicksSell();
+    res.json(picks);
+  } catch (err) {
+    res.status(500).json({ error: 'AI Sell picks failed', message: err.message });
+  }
+});
+
+app.get('/gainers', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
+    res.json(data.slice(0, 100));
+  } catch (err) {
+    res.status(500).json({ error: 'No data available' });
   }
 });
 
 app.get('/losers', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
-    const top100 = data.slice(0, 100).map(item => ({
-      symbol: item.symbol,
-      name: item.name || item.companyName || 'N/A',
-      changePercent: typeof item.changesPercentage === 'number'
-        ? item.changesPercentage.toFixed(2)
-        : '0.00'
-    }));
-    res.json(top100);
+    res.json(data.slice(0, 100));
   } catch (err) {
-    console.error('❌ /losers failed:', err);
     res.status(500).json({ error: 'No data available' });
   }
 });
 
-// ✅ Live /volume route with cached real data
 app.get('/volume', (req, res) => {
-  const filePath = './cache/stock_market_dollar_volume.json';
-
   try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(raw);
-
-    if (!Array.isArray(data)) {
-      console.error('❌ /volume failed: expected array but got:', typeof data);
-      return res.status(500).json({ error: 'Invalid volume data format' });
-    }
-
-    const top100 = data.slice(0, 100).map(item => ({
-      symbol: item.symbol,
-      name: item.name || item.companyName || 'N/A',
-      changePercent:
-        typeof item.changesPercentage === 'number'
-          ? item.changesPercentage.toFixed(2)
-          : '0.00',
-    }));
-
-    console.log('✅ /volume served successfully');
-    res.json(top100);
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
+    res.json(data.slice(0, 100));
   } catch (err) {
-    console.error('❌ /volume failed:', err.message);
     res.status(500).json({ error: 'No data available' });
   }
 });
 
-
-// ✅ Manual fetch trigger for /volume
-app.get('/fetch-volume', async (req, res) => {
-  try {
-    await fetchAndCache('stock_market/dollar_volume');
-    res.send('Volume fetched and cached.');
-  } catch (err) {
-    console.error('❌ /fetch-volume error:', err);
-    res.status(500).send('Failed to fetch volume data.');
-  }
-});
-
-// Manual fetch trigger for gainers
-app.get('/fetch-now', async (req, res) => {
-  await fetchAndCache('stock_market/gainers');
-  res.send('Gainers fetched and cached manually.');
-});
-
-// Extra routes
+// RSI Routes
 app.get('/rsi-high', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_desc.json'));
     res.json(data);
   } catch {
-    res.status(500).json({ error: 'No data available' });
+    res.status(500).json({ error: 'No RSI high data available' });
   }
 });
 
@@ -197,8 +130,65 @@ app.get('/rsi-low', (req, res) => {
     const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_asc.json'));
     res.json(data);
   } catch {
-    res.status(500).json({ error: 'No data available' });
+    res.status(500).json({ error: 'No RSI low data available' });
   }
+});
+
+// P/E Ratio Routes
+app.get('/pe-low', async (req, res) => {
+  try {
+    const url = `${BASE}/stock-screener?limit=100&sort=asc&column=pe&apikey=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'Failed to fetch PE low data' });
+  }
+});
+
+app.get('/pe-high', async (req, res) => {
+  try {
+    const url = `${BASE}/stock-screener?limit=100&sort=desc&column=pe&apikey=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'Failed to fetch PE high data' });
+  }
+});
+
+// Sentiment News Routes
+app.get('/sentiment-positive', async (req, res) => {
+  try {
+    const url = `${BASE}/stock_news?sentiment=positive&limit=100&apikey=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'Failed to fetch positive sentiment news' });
+  }
+});
+
+app.get('/sentiment-negative', async (req, res) => {
+  try {
+    const url = `${BASE}/stock_news?sentiment=negative&limit=100&apikey=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'Failed to fetch negative sentiment news' });
+  }
+});
+
+// Manual test/fetch
+app.get('/fetch-now', async (req, res) => {
+  await fetchAndCache('stock_market/gainers');
+  res.send('Gainers fetched and cached.');
+});
+
+app.get('/fetch-volume', async (req, res) => {
+  await fetchAndCache('stock_market/dollar_volume');
+  res.send('Volume fetched and cached.');
 });
 
 app.get('/gapup', (req, res) => {
@@ -219,69 +209,6 @@ app.get('/gapdown', (req, res) => {
   }
 });
 
-app.get('/news-positive', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_news_sentiment_positive.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/news-negative', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_news_sentiment_negative.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/ipo', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_price.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/pe-ratio', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/ratios-ttm_sort_peRatio_limit_50.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/watchlist', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_watchlist.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/', (req, res) => {
-  res.send('✅ Backend is working!');
-});
-
-// Fallback route
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-// Start
-app.listen(PORT, () => {
-  console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
-
-  // ✅ Preload volume data AFTER server has started
-  fetchAndCache('stock_market/dollar_volume');
-});
-
-
-// Start
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
 });

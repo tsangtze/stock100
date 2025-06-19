@@ -1,3 +1,4 @@
+// ✅ aiModel.js (Full Updated Version with Buy & Sell separation)
 const fs = require('fs');
 const fetch = require('node-fetch');
 
@@ -17,15 +18,22 @@ function getBuyTag(score) {
   return { tag: "Buy", color: "#98fb98" };
 }
 
+function getSellTag(score) {
+  if (score <= 10) return { tag: "Strong Sell", color: "#8b0000" };
+  if (score <= 20) return { tag: "Recommended Sell", color: "#b22222" };
+  if (score <= 30) return { tag: "Suggested Sell", color: "#dc143c" };
+  if (score <= 40) return { tag: "Negative Trend", color: "#ff4500" };
+  return { tag: "Consider Selling", color: "#ff6347" };
+}
+
 async function getTopStockPredictions() {
   const today = new Date().toISOString().split('T')[0];
 
-  // Return cached picks if available
   if (fs.existsSync(CACHE_FILE)) {
     const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-    if (cached.date === today) {
+    if (cached.date === today && cached.buy && cached.sell) {
       console.log('✅ Loaded AI picks from cache');
-      return cached.picks;
+      return cached;
     }
   }
 
@@ -46,15 +54,9 @@ async function getTopStockPredictions() {
     const newsData = await newsRes.json();
     const gapData = await gapRes.json();
 
-    const volMap = {};
-    volData.forEach(d => volMap[d.symbol] = +d.volume || 0);
-
-    const rsiMap = {};
-    rsiData.forEach(d => rsiMap[d.symbol] = +d.rsi || 50);
-
-    const capMap = {};
-    mcapData.forEach(d => capMap[d.symbol] = +d.marketCap || 1e9);
-
+    const volMap = {}; volData.forEach(d => volMap[d.symbol] = +d.volume || 0);
+    const rsiMap = {}; rsiData.forEach(d => rsiMap[d.symbol] = +d.rsi || 50);
+    const capMap = {}; mcapData.forEach(d => capMap[d.symbol] = +d.marketCap || 1e9);
     const newsSet = new Set(newsData.map(n => n.symbol));
     const gapSet = new Set(gapData.map(n => n.symbol));
 
@@ -63,7 +65,6 @@ async function getTopStockPredictions() {
       const eps = parseFloat(stock.eps || 0);
       const epsEst = parseFloat(stock.epsEstimated || 0);
       const epsGrowth = eps - epsEst;
-
       const volume = volMap[symbol] || 0;
       const rsi = rsiMap[symbol];
       const marketCap = capMap[symbol];
@@ -86,40 +87,31 @@ async function getTopStockPredictions() {
         gapScore * 0.1
       );
 
-      const { tag, color } = getBuyTag(finalScore);
-
-      return {
-        symbol,
-        eps,
-        epsEstimated: epsEst,
-        epsGrowth: +epsGrowth.toFixed(2),
-        volume,
-        rsi,
-        marketCap,
-        newsSentiment: newsBoost,
-        gapUp: gapBoost,
-        finalScore,
-        tag,
-        color
-      };
+      return { symbol, finalScore };
     });
 
-    predictions.sort((a, b) => b.finalScore - a.finalScore);
-    const top10 = predictions.slice(0, 10);
+    const sorted = [...predictions].sort((a, b) => b.finalScore - a.finalScore);
+    const bestToBuy = sorted.slice(0, 10).map(stock => ({
+      ...stock,
+      ...getBuyTag(stock.finalScore)
+    }));
 
-    fs.writeFileSync(CACHE_FILE, JSON.stringify({ date: today, picks: top10 }, null, 2));
-    console.log('✅ AI picks saved to cache:', top10.map(s => s.symbol).join(', '));
+    const bestToSell = sorted.slice(-10).reverse().map(stock => ({
+      ...stock,
+      ...getSellTag(stock.finalScore)
+    }));
 
-    return top10;
+    fs.writeFileSync(CACHE_FILE, JSON.stringify({ date: today, buy: bestToBuy, sell: bestToSell }, null, 2));
+    console.log('✅ AI Buy/Sell picks cached:', bestToBuy.map(s => s.symbol).join(", "));
+
+    return { buy: bestToBuy, sell: bestToSell };
   } catch (err) {
     console.error('❌ AI prediction error:', err);
     if (fs.existsSync(CACHE_FILE)) {
-      const fallback = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-      return fallback.picks;
+      return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
     }
-    return [];
+    return { buy: [], sell: [] };
   }
 }
 
-// ✅ Export correctly
 module.exports = { getTopStockPredictions };
