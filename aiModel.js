@@ -1,4 +1,4 @@
-// ✅ aiModel.js – Full Version with Fallback Fix
+// ✅ aiModel.js – Full Version with Fallback Fix and API Data Validation
 
 const fs = require('fs');
 const fetch = require('node-fetch');
@@ -56,6 +56,12 @@ async function getTopStockPredictions() {
     const mcapData = await mcapRes.json();
     const newsData = await newsRes.json();
     const gapData = await gapRes.json();
+
+    // ✅ Validate essential arrays
+    if (!Array.isArray(epsData)) throw new Error('EPS data invalid');
+    if (!Array.isArray(volData)) throw new Error('Volume data invalid');
+    if (!Array.isArray(rsiData)) throw new Error('RSI data invalid');
+    if (!Array.isArray(mcapData)) throw new Error('MarketCap data invalid');
 
     const volMap = {}; volData.forEach(d => volMap[d.symbol] = +d.volume || 0);
     const rsiMap = {}; rsiData.forEach(d => rsiMap[d.symbol] = +d.rsi || 50);
@@ -116,7 +122,6 @@ async function getTopStockPredictions() {
 
     const result = { date: today, buyLong, buyShort, sellLong, sellShort };
 
-    // Validate and write cache
     if (
       Array.isArray(buyLong) && Array.isArray(buyShort) &&
       Array.isArray(sellLong) && Array.isArray(sellShort)
@@ -150,17 +155,4 @@ async function getTopStockPredictions() {
 }
 
 async function getAIPicksBuy() {
-  const all = await getTopStockPredictions();
-  return [...(all.buyLong || []), ...(all.buyShort || [])];
-}
-
-async function getAIPicksSell() {
-  const all = await getTopStockPredictions();
-  return [...(all.sellLong || []), ...(all.sellShort || [])];
-}
-
-module.exports = {
-  getTopStockPredictions,
-  getAIPicksBuy,
-  getAIPicksSell
-};
+  const all = await getT
