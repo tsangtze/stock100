@@ -17,14 +17,13 @@ const {
   getAIPicksSell
 } = require('./aiModel');
 
-const { sendFavoriteAlert } = require('./functionssendEmailAlert'); // ✅ NEW
+const { sendFavoriteAlert } = require('./functionssendEmailAlert');
 
 app.use(cors());
 app.use(express.json());
 
 if (!fs.existsSync('./cache')) fs.mkdirSync('./cache');
 
-// ✅ Moved below app init
 app.get('/', (req, res) => {
   res.send('✅ Stock100 backend is running.');
 });
@@ -233,7 +232,6 @@ app.post('/alert-favorite', async (req, res) => {
   }
 });
 
-// ✅ Start server
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
 });
