@@ -1,4 +1,7 @@
 // ✅ server.js – Full Version with Cron Fetch + AI Picks + RSI + P/E + Sentiment + Gap Up/Down + Volatile + Email Alert Route
+app.get('/', (req, res) => {
+  res.send('✅ Stock100 backend is running.');
+});
 
 const express = require('express');
 const cors = require('cors');
