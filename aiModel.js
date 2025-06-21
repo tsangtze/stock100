@@ -51,6 +51,7 @@ async function getTopStockPredictions() {
     ]);
 
     const epsData = await epsRes.json();
+    console.log('🧪 Raw EPS data:', epsData);
     const volData = await volRes.json();
     const rsiData = await rsiRes.json();
     const mcapData = await mcapRes.json();
