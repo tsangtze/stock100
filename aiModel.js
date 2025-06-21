@@ -1,5 +1,3 @@
-// ✅ aiModel.js – Full Version with Fallback Fix and API Data Validation
-
 const fs = require('fs');
 const fetch = require('node-fetch');
 
@@ -51,15 +49,15 @@ async function getTopStockPredictions() {
     ]);
 
     const epsData = await epsRes.json();
-    console.log('🧪 Raw EPS data:', epsData);
+    const epsOK = Array.isArray(epsData);
+    if (!epsOK) console.warn('⚠️ EPS data not available, continuing without EPS scoring.');
+
     const volData = await volRes.json();
     const rsiData = await rsiRes.json();
     const mcapData = await mcapRes.json();
     const newsData = await newsRes.json();
     const gapData = await gapRes.json();
 
-    // ✅ Validate essential arrays
-    if (!Array.isArray(epsData)) throw new Error('EPS data invalid');
     if (!Array.isArray(volData)) throw new Error('Volume data invalid');
     if (!Array.isArray(rsiData)) throw new Error('RSI data invalid');
     if (!Array.isArray(mcapData)) throw new Error('MarketCap data invalid');
@@ -70,18 +68,21 @@ async function getTopStockPredictions() {
     const newsSet = Array.isArray(newsData) ? new Set(newsData.map(n => n.symbol)) : new Set();
     const gapSet = Array.isArray(gapData) ? new Set(gapData.map(n => n.symbol)) : new Set();
 
-    const predictions = epsData.map(stock => {
+    const baseData = epsOK ? epsData : volData;
+
+    const predictions = baseData.map(stock => {
       const symbol = stock.symbol;
-      const eps = parseFloat(stock.eps || 0);
-      const epsEst = parseFloat(stock.epsEstimated || 0);
+      const eps = epsOK ? parseFloat(stock.eps || 0) : 0;
+      const epsEst = epsOK ? parseFloat(stock.epsEstimated || 0) : 0;
       const epsGrowth = eps - epsEst;
+      const epsScore = epsOK ? normalize(epsGrowth, -5, 5) : 50;
+
       const volume = volMap[symbol] || 0;
       const rsi = rsiMap[symbol];
       const marketCap = capMap[symbol];
       const newsBoost = newsSet.has(symbol) ? 1 : 0;
       const gapBoost = gapSet.has(symbol) ? 1 : 0;
 
-      const epsScore = normalize(epsGrowth, -5, 5);
       const volumeScore = normalize(volume, 100000, 50000000);
       const rsiScore = 100 - normalize(rsi, 10, 90);
       const capScore = normalize(marketCap, 1e8, 2e11);
@@ -90,34 +91,30 @@ async function getTopStockPredictions() {
 
       return {
         symbol,
-        longBuyScore: Math.round(epsScore * 0.4 + capScore * 0.3 + newsScore * 0.3),
+        longBuyScore: Math.round((epsOK ? epsScore * 0.4 : 0) + capScore * 0.4 + newsScore * 0.2),
         shortBuyScore: Math.round(volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4),
-        longSellScore: Math.round(100 - (epsScore * 0.4 + capScore * 0.3 + newsScore * 0.3)),
+        longSellScore: Math.round(100 - ((epsOK ? epsScore * 0.4 : 0) + capScore * 0.4 + newsScore * 0.2)),
         shortSellScore: Math.round(100 - (volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4))
       };
     });
 
     const buyLong = predictions.sort((a, b) => b.longBuyScore - a.longBuyScore).slice(0, 10).map(s => ({
       symbol: s.symbol,
-      score: s.longBuyScore,
       ...tag(s.longBuyScore, 'buy')
     }));
 
     const buyShort = predictions.sort((a, b) => b.shortBuyScore - a.shortBuyScore).slice(0, 10).map(s => ({
       symbol: s.symbol,
-      score: s.shortBuyScore,
       ...tag(s.shortBuyScore, 'buy')
     }));
 
     const sellLong = predictions.sort((a, b) => a.longSellScore - b.longSellScore).slice(0, 10).map(s => ({
       symbol: s.symbol,
-      score: s.longSellScore,
       ...tag(s.longSellScore, 'sell')
     }));
 
     const sellShort = predictions.sort((a, b) => a.shortSellScore - b.shortSellScore).slice(0, 10).map(s => ({
       symbol: s.symbol,
-      score: s.shortSellScore,
       ...tag(s.shortSellScore, 'sell')
     }));
 
