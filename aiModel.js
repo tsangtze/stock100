@@ -1,4 +1,4 @@
-// ✅ aiModel.js – Full Version with Buy/Sell AI Pick Functions
+// ✅ aiModel.js – Full Version with Fallback Fix
 
 const fs = require('fs');
 const fetch = require('node-fetch');
@@ -29,10 +29,14 @@ async function getTopStockPredictions() {
   const today = new Date().toISOString().split('T')[0];
 
   if (fs.existsSync(CACHE_FILE)) {
-    const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-    if (cached.date === today) {
-      console.log('✅ Loaded AI picks from cache');
-      return cached;
+    try {
+      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+      if (cached.date === today) {
+        console.log('✅ Loaded AI picks from cache');
+        return cached;
+      }
+    } catch (err) {
+      console.warn('⚠️ Failed to parse cache file:', err);
     }
   }
 
@@ -58,8 +62,8 @@ async function getTopStockPredictions() {
     const capMap = {}; mcapData.forEach(d => capMap[d.symbol] = +d.marketCap || 1e9);
     const newsSet = Array.isArray(newsData) ? new Set(newsData.map(n => n.symbol)) : new Set();
     const gapSet = Array.isArray(gapData) ? new Set(gapData.map(n => n.symbol)) : new Set();
- 
-     const predictions = epsData.map(stock => {
+
+    const predictions = epsData.map(stock => {
       const symbol = stock.symbol;
       const eps = parseFloat(stock.eps || 0);
       const epsEst = parseFloat(stock.epsEstimated || 0);
@@ -111,28 +115,48 @@ async function getTopStockPredictions() {
     }));
 
     const result = { date: today, buyLong, buyShort, sellLong, sellShort };
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(result, null, 2));
-    console.log('✅ AI Picks (Long/Short) cached.');
+
+    // Validate and write cache
+    if (
+      Array.isArray(buyLong) && Array.isArray(buyShort) &&
+      Array.isArray(sellLong) && Array.isArray(sellShort)
+    ) {
+      fs.writeFileSync(CACHE_FILE, JSON.stringify(result, null, 2));
+      console.log('✅ AI Picks (Long/Short) cached.');
+    }
+
     return result;
 
   } catch (err) {
     console.error('❌ AI prediction error:', err);
+
     if (fs.existsSync(CACHE_FILE)) {
-      return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+      try {
+        const backup = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+        console.log('🧠 AI picks fallback loaded from cache.');
+        return {
+          buyLong: Array.isArray(backup.buyLong) ? backup.buyLong : [],
+          buyShort: Array.isArray(backup.buyShort) ? backup.buyShort : [],
+          sellLong: Array.isArray(backup.sellLong) ? backup.sellLong : [],
+          sellShort: Array.isArray(backup.sellShort) ? backup.sellShort : []
+        };
+      } catch (e) {
+        console.warn('⚠️ Failed to parse backup cache:', e);
+      }
     }
+
     return { buyLong: [], buyShort: [], sellLong: [], sellShort: [] };
   }
 }
 
-// ✅ Export helper functions
 async function getAIPicksBuy() {
   const all = await getTopStockPredictions();
-  return [...all.buyLong, ...all.buyShort];
+  return [...(all.buyLong || []), ...(all.buyShort || [])];
 }
 
 async function getAIPicksSell() {
   const all = await getTopStockPredictions();
-  return [...all.sellLong, ...all.sellShort];
+  return [...(all.sellLong || []), ...(all.sellShort || [])];
 }
 
 module.exports = {
