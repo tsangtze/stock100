@@ -1,8 +1,4 @@
 // ✅ server.js – Full Version with Cron Fetch + AI Picks + RSI + P/E + Sentiment + Gap Up/Down + Volatile + Email Alert Route
-app.get('/', (req, res) => {
-  res.send('✅ Stock100 backend is running.');
-});
-
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -28,9 +24,15 @@ app.use(express.json());
 
 if (!fs.existsSync('./cache')) fs.mkdirSync('./cache');
 
+// ✅ Moved below app init
+app.get('/', (req, res) => {
+  res.send('✅ Stock100 backend is running.');
+});
+
 function getTodayKey() {
   return new Date().toISOString().slice(0, 10);
 }
+
 function incrementFetchCounter() {
   const file = './fetchCount.json';
   const today = getTodayKey();
@@ -57,14 +59,14 @@ async function fetchAndCache(endpoint) {
   }
 }
 
-// 🕒 Auto-fetch AI Picks + Volatile twice/day (10 AM + 3 PM ET)
+// 🕒 Cron: AI Picks + Volatile twice/day (10 AM + 3 PM ET)
 cron.schedule('0 7,12 * * 1-5', async () => {
   console.log('🧠 Cron: AI Picks + Volatile...');
   await getTopStockPredictions();
   await fetchAndCache('stock_market/most_volatile');
 });
 
-// 🕕 Auto-fetch Gap Up/Down once/day (9:30 AM ET)
+// 🕕 Cron: Gap Up/Down once/day (9:30 AM ET)
 cron.schedule('30 6 * * 1-5', async () => {
   console.log('📊 Cron: Gap Up & Down...');
   await fetchAndCache('stock_market/gap_up');
@@ -72,8 +74,6 @@ cron.schedule('30 6 * * 1-5', async () => {
 });
 
 // ✅ Routes
-app.get('/', (req, res) => res.send('✅ Backend is working!'));
-
 app.get('/ai-picks', async (req, res) => {
   try {
     const picks = await getTopStockPredictions();
@@ -105,7 +105,7 @@ app.get('/gainers', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_gainers.json'));
     res.json(data.slice(0, 100));
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
@@ -114,7 +114,7 @@ app.get('/losers', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_losers.json'));
     res.json(data.slice(0, 100));
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
@@ -123,7 +123,7 @@ app.get('/volume', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/stock_market_dollar_volume.json'));
     res.json(data.slice(0, 100));
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'No data available' });
   }
 });
@@ -155,7 +155,7 @@ app.get('/gapdown', (req, res) => {
   }
 });
 
-// RSI Routes
+// RSI
 app.get('/rsi-high', (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync('./cache/technical_indicator_rsi_period_14_type_stock_sort_desc.json'));
@@ -174,7 +174,7 @@ app.get('/rsi-low', (req, res) => {
   }
 });
 
-// P/E Ratio Routes
+// P/E Ratio
 app.get('/pe-low', async (req, res) => {
   try {
     const url = `${BASE}/stock-screener?limit=100&sort=asc&column=pe&apikey=${API_KEY}`;
@@ -197,7 +197,7 @@ app.get('/pe-high', async (req, res) => {
   }
 });
 
-// Sentiment News Routes
+// Sentiment
 app.get('/sentiment-positive', async (req, res) => {
   try {
     const url = `${BASE}/stock_news?sentiment=positive&limit=100&apikey=${API_KEY}`;
@@ -220,7 +220,7 @@ app.get('/sentiment-negative', async (req, res) => {
   }
 });
 
-// 📨 Trigger email alert when stock is favorited
+// 📨 Email alert when favorited
 app.post('/alert-favorite', async (req, res) => {
   const { email, symbol } = req.body;
   if (!email || !symbol) return res.status(400).json({ error: 'Missing email or symbol' });
@@ -233,24 +233,7 @@ app.post('/alert-favorite', async (req, res) => {
   }
 });
 
-app.get('/gapup', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_up.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
-app.get('/gapdown', (req, res) => {
-  try {
-    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_down.json'));
-    res.json(data);
-  } catch {
-    res.status(500).json({ error: 'No data available' });
-  }
-});
-
+// ✅ Start server
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
 });
