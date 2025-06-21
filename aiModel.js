@@ -1,4 +1,4 @@
-// ✅ aiModel.js – Enhanced AI Picks with Long-Term / Short-Term Buy & Sell
+// ✅ aiModel.js – Full Version with Buy/Sell AI Pick Functions
 
 const fs = require('fs');
 const fetch = require('node-fetch');
@@ -124,4 +124,19 @@ async function getTopStockPredictions() {
   }
 }
 
-module.exports = { getTopStockPredictions };
+// ✅ Export helper functions
+async function getAIPicksBuy() {
+  const all = await getTopStockPredictions();
+  return [...all.buyLong, ...all.buyShort];
+}
+
+async function getAIPicksSell() {
+  const all = await getTopStockPredictions();
+  return [...all.sellLong, ...all.sellShort];
+}
+
+module.exports = {
+  getTopStockPredictions,
+  getAIPicksBuy,
+  getAIPicksSell
+};
