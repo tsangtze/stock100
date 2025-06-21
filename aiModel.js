@@ -155,4 +155,17 @@ async function getTopStockPredictions() {
 }
 
 async function getAIPicksBuy() {
-  const all = await getT
+  const all = await getTopStockPredictions();
+  return [...(all.buyLong || []), ...(all.buyShort || [])];
+}
+
+async function getAIPicksSell() {
+  const all = await getTopStockPredictions();
+  return [...(all.sellLong || []), ...(all.sellShort || [])];
+}
+
+module.exports = {
+  getTopStockPredictions,
+  getAIPicksBuy,
+  getAIPicksSell
+};
