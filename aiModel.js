@@ -56,10 +56,10 @@ async function getTopStockPredictions() {
     const volMap = {}; volData.forEach(d => volMap[d.symbol] = +d.volume || 0);
     const rsiMap = {}; rsiData.forEach(d => rsiMap[d.symbol] = +d.rsi || 50);
     const capMap = {}; mcapData.forEach(d => capMap[d.symbol] = +d.marketCap || 1e9);
-    const newsSet = new Set(newsData.map(n => n.symbol));
-    const gapSet = new Set(gapData.map(n => n.symbol));
-
-    const predictions = epsData.map(stock => {
+    const newsSet = Array.isArray(newsData) ? new Set(newsData.map(n => n.symbol)) : new Set();
+    const gapSet = Array.isArray(gapData) ? new Set(gapData.map(n => n.symbol)) : new Set();
+ 
+     const predictions = epsData.map(stock => {
       const symbol = stock.symbol;
       const eps = parseFloat(stock.eps || 0);
       const epsEst = parseFloat(stock.epsEstimated || 0);
