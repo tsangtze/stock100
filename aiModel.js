@@ -9,16 +9,16 @@ function normalize(value, min, max) {
   return Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100));
 }
 
-function tag(score, type) {
+function rankTag(index, type) {
   if (type === 'buy') {
-    if (score >= 90) return { tag: "Strong Buy", color: "#0a7f00" };
-    if (score >= 80) return { tag: "Recommended Buy", color: "#2e8b57" };
-    if (score >= 70) return { tag: "Suggested Buy", color: "#3cb371" };
+    if (index === 0) return { tag: "Strong Buy", color: "#0a7f00" };
+    if (index <= 2) return { tag: "Recommended Buy", color: "#2e8b57" };
+    if (index <= 5) return { tag: "Suggested Buy", color: "#3cb371" };
     return { tag: "Watch Buy", color: "#98fb98" };
   } else {
-    if (score <= 10) return { tag: "Strong Sell", color: "#8b0000" };
-    if (score <= 20) return { tag: "Recommended Sell", color: "#b22222" };
-    if (score <= 30) return { tag: "Suggested Sell", color: "#dc143c" };
+    if (index === 0) return { tag: "Strong Sell", color: "#8b0000" };
+    if (index <= 2) return { tag: "Recommended Sell", color: "#b22222" };
+    if (index <= 5) return { tag: "Suggested Sell", color: "#dc143c" };
     return { tag: "Watch Sell", color: "#ff6347" };
   }
 }
@@ -98,25 +98,14 @@ async function getTopStockPredictions() {
       };
     });
 
-    const buyLong = predictions.sort((a, b) => b.longBuyScore - a.longBuyScore).slice(0, 10).map(s => ({
-      symbol: s.symbol,
-      ...tag(s.longBuyScore, 'buy')
-    }));
-
-    const buyShort = predictions.sort((a, b) => b.shortBuyScore - a.shortBuyScore).slice(0, 10).map(s => ({
-      symbol: s.symbol,
-      ...tag(s.shortBuyScore, 'buy')
-    }));
-
-    const sellLong = predictions.sort((a, b) => a.longSellScore - b.longSellScore).slice(0, 10).map(s => ({
-      symbol: s.symbol,
-      ...tag(s.longSellScore, 'sell')
-    }));
-
-    const sellShort = predictions.sort((a, b) => a.shortSellScore - b.shortSellScore).slice(0, 10).map(s => ({
-      symbol: s.symbol,
-      ...tag(s.shortSellScore, 'sell')
-    }));
+    const buyLong = predictions.sort((a, b) => b.longBuyScore - a.longBuyScore).slice(0, 10)
+      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'buy') }));
+    const buyShort = predictions.sort((a, b) => b.shortBuyScore - a.shortBuyScore).slice(0, 10)
+      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'buy') }));
+    const sellLong = predictions.sort((a, b) => a.longSellScore - b.longSellScore).slice(0, 10)
+      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'sell') }));
+    const sellShort = predictions.sort((a, b) => a.shortSellScore - b.shortSellScore).slice(0, 10)
+      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'sell') }));
 
     const result = { date: today, buyLong, buyShort, sellLong, sellShort };
 
