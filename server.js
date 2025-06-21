@@ -1,4 +1,4 @@
-// server.js – Full Version with Cron Fetch + AI Picks + RSI + P/E + Sentiment Routes
+// ✅ server.js – Full Version with Cron Fetch + AI Picks + RSI + P/E + Sentiment + Gap Up/Down + Volatile + Email Alert Route
 
 const express = require('express');
 const cors = require('cors');
@@ -17,6 +17,8 @@ const {
   getAIPicksBuy,
   getAIPicksSell
 } = require('./aiModel');
+
+const { sendFavoriteAlert } = require('./functionssendEmailAlert'); // ✅ NEW
 
 app.use(cors());
 app.use(express.json());
@@ -52,13 +54,21 @@ async function fetchAndCache(endpoint) {
   }
 }
 
-// 🕒 Auto-fetch AI Picks at 10 AM and 3 PM ET (7 & 12 PT)
+// 🕒 Auto-fetch AI Picks + Volatile twice/day (10 AM + 3 PM ET)
 cron.schedule('0 7,12 * * 1-5', async () => {
-  console.log('🧠 Cron job running for AI Picks...');
+  console.log('🧠 Cron: AI Picks + Volatile...');
   await getTopStockPredictions();
+  await fetchAndCache('stock_market/most_volatile');
 });
 
-// Routes
+// 🕕 Auto-fetch Gap Up/Down once/day (9:30 AM ET)
+cron.schedule('30 6 * * 1-5', async () => {
+  console.log('📊 Cron: Gap Up & Down...');
+  await fetchAndCache('stock_market/gap_up');
+  await fetchAndCache('stock_market/gap_down');
+});
+
+// ✅ Routes
 app.get('/', (req, res) => res.send('✅ Backend is working!'));
 
 app.get('/ai-picks', async (req, res) => {
@@ -112,6 +122,33 @@ app.get('/volume', (req, res) => {
     res.json(data.slice(0, 100));
   } catch (err) {
     res.status(500).json({ error: 'No data available' });
+  }
+});
+
+app.get('/most-volatile', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_most_volatile.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No most volatile data available' });
+  }
+});
+
+app.get('/gapup', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_up.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No gap up data available' });
+  }
+});
+
+app.get('/gapdown', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('./cache/stock_market_gap_down.json'));
+    res.json(data);
+  } catch {
+    res.status(500).json({ error: 'No gap down data available' });
   }
 });
 
@@ -180,15 +217,17 @@ app.get('/sentiment-negative', async (req, res) => {
   }
 });
 
-// Manual test/fetch
-app.get('/fetch-now', async (req, res) => {
-  await fetchAndCache('stock_market/gainers');
-  res.send('Gainers fetched and cached.');
-});
+// 📨 Trigger email alert when stock is favorited
+app.post('/alert-favorite', async (req, res) => {
+  const { email, symbol } = req.body;
+  if (!email || !symbol) return res.status(400).json({ error: 'Missing email or symbol' });
 
-app.get('/fetch-volume', async (req, res) => {
-  await fetchAndCache('stock_market/dollar_volume');
-  res.send('Volume fetched and cached.');
+  try {
+    await sendFavoriteAlert(email, symbol);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to send email alert', message: err.message });
+  }
 });
 
 app.get('/gapup', (req, res) => {

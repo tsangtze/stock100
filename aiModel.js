@@ -1,4 +1,5 @@
-// ✅ aiModel.js (Full Updated Version with Buy & Sell separation)
+// ✅ aiModel.js – Enhanced AI Picks with Long-Term / Short-Term Buy & Sell
+
 const fs = require('fs');
 const fetch = require('node-fetch');
 
@@ -10,20 +11,18 @@ function normalize(value, min, max) {
   return Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100));
 }
 
-function getBuyTag(score) {
-  if (score >= 90) return { tag: "Strong Buy", color: "#0a7f00" };
-  if (score >= 80) return { tag: "Recommended Buy", color: "#2e8b57" };
-  if (score >= 70) return { tag: "Suggested Buy", color: "#3cb371" };
-  if (score >= 60) return { tag: "Positive to Buy", color: "#66cdaa" };
-  return { tag: "Buy", color: "#98fb98" };
-}
-
-function getSellTag(score) {
-  if (score <= 10) return { tag: "Strong Sell", color: "#8b0000" };
-  if (score <= 20) return { tag: "Recommended Sell", color: "#b22222" };
-  if (score <= 30) return { tag: "Suggested Sell", color: "#dc143c" };
-  if (score <= 40) return { tag: "Negative Trend", color: "#ff4500" };
-  return { tag: "Consider Selling", color: "#ff6347" };
+function tag(score, type) {
+  if (type === 'buy') {
+    if (score >= 90) return { tag: "Strong Buy", color: "#0a7f00" };
+    if (score >= 80) return { tag: "Recommended Buy", color: "#2e8b57" };
+    if (score >= 70) return { tag: "Suggested Buy", color: "#3cb371" };
+    return { tag: "Watch Buy", color: "#98fb98" };
+  } else {
+    if (score <= 10) return { tag: "Strong Sell", color: "#8b0000" };
+    if (score <= 20) return { tag: "Recommended Sell", color: "#b22222" };
+    if (score <= 30) return { tag: "Suggested Sell", color: "#dc143c" };
+    return { tag: "Watch Sell", color: "#ff6347" };
+  }
 }
 
 async function getTopStockPredictions() {
@@ -31,7 +30,7 @@ async function getTopStockPredictions() {
 
   if (fs.existsSync(CACHE_FILE)) {
     const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
-    if (cached.date === today && cached.buy && cached.sell) {
+    if (cached.date === today) {
       console.log('✅ Loaded AI picks from cache');
       return cached;
     }
@@ -78,39 +77,50 @@ async function getTopStockPredictions() {
       const newsScore = newsBoost * 100;
       const gapScore = gapBoost * 100;
 
-      const finalScore = Math.round(
-        epsScore * 0.3 +
-        volumeScore * 0.2 +
-        rsiScore * 0.15 +
-        capScore * 0.15 +
-        newsScore * 0.1 +
-        gapScore * 0.1
-      );
-
-      return { symbol, finalScore };
+      return {
+        symbol,
+        longBuyScore: Math.round(epsScore * 0.4 + capScore * 0.3 + newsScore * 0.3),
+        shortBuyScore: Math.round(volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4),
+        longSellScore: Math.round(100 - (epsScore * 0.4 + capScore * 0.3 + newsScore * 0.3)),
+        shortSellScore: Math.round(100 - (volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4))
+      };
     });
 
-    const sorted = [...predictions].sort((a, b) => b.finalScore - a.finalScore);
-    const bestToBuy = sorted.slice(0, 10).map(stock => ({
-      ...stock,
-      ...getBuyTag(stock.finalScore)
+    const buyLong = predictions.sort((a, b) => b.longBuyScore - a.longBuyScore).slice(0, 10).map(s => ({
+      symbol: s.symbol,
+      score: s.longBuyScore,
+      ...tag(s.longBuyScore, 'buy')
     }));
 
-    const bestToSell = sorted.slice(-10).reverse().map(stock => ({
-      ...stock,
-      ...getSellTag(stock.finalScore)
+    const buyShort = predictions.sort((a, b) => b.shortBuyScore - a.shortBuyScore).slice(0, 10).map(s => ({
+      symbol: s.symbol,
+      score: s.shortBuyScore,
+      ...tag(s.shortBuyScore, 'buy')
     }));
 
-    fs.writeFileSync(CACHE_FILE, JSON.stringify({ date: today, buy: bestToBuy, sell: bestToSell }, null, 2));
-    console.log('✅ AI Buy/Sell picks cached:', bestToBuy.map(s => s.symbol).join(", "));
+    const sellLong = predictions.sort((a, b) => a.longSellScore - b.longSellScore).slice(0, 10).map(s => ({
+      symbol: s.symbol,
+      score: s.longSellScore,
+      ...tag(s.longSellScore, 'sell')
+    }));
 
-    return { buy: bestToBuy, sell: bestToSell };
+    const sellShort = predictions.sort((a, b) => a.shortSellScore - b.shortSellScore).slice(0, 10).map(s => ({
+      symbol: s.symbol,
+      score: s.shortSellScore,
+      ...tag(s.shortSellScore, 'sell')
+    }));
+
+    const result = { date: today, buyLong, buyShort, sellLong, sellShort };
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(result, null, 2));
+    console.log('✅ AI Picks (Long/Short) cached.');
+    return result;
+
   } catch (err) {
     console.error('❌ AI prediction error:', err);
     if (fs.existsSync(CACHE_FILE)) {
       return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
     }
-    return { buy: [], sell: [] };
+    return { buyLong: [], buyShort: [], sellLong: [], sellShort: [] };
   }
 }
 
