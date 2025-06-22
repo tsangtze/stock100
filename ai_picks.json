@@ -1,15 +1,211 @@
 {
-  "date": "2025-06-11",
-  "picks": [
-    { "symbol": "AAPL", "score": 92.3 },
-    { "symbol": "MSFT", "score": 89.5 },
-    { "symbol": "NVDA", "score": 88.7 },
-    { "symbol": "GOOGL", "score": 87.1 },
-    { "symbol": "AMZN", "score": 85.4 },
-    { "symbol": "TSLA", "score": 83.6 },
-    { "symbol": "META", "score": 82.3 },
-    { "symbol": "AVGO", "score": 81.0 },
-    { "symbol": "AMD", "score": 79.8 },
-    { "symbol": "CRM", "score": 78.2 }
+  "date": "2025-06-21",
+  "buyLong": [
+    {
+      "symbol": "HCTI",
+      "tag": "Strong Buy",
+      "color": "#0a7f00"
+    },
+    {
+      "symbol": "DFLI",
+      "tag": "Recommended Buy",
+      "color": "#2e8b57"
+    },
+    {
+      "symbol": "NVDA",
+      "tag": "Recommended Buy",
+      "color": "#2e8b57"
+    },
+    {
+      "symbol": "GNLN",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "TSLL",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "MITQ",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "DNN",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "BBAI",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "PCSA",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "SOXL",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    }
+  ],
+  "buyShort": [
+    {
+      "symbol": "HCTI",
+      "tag": "Strong Buy",
+      "color": "#0a7f00"
+    },
+    {
+      "symbol": "DFLI",
+      "tag": "Recommended Buy",
+      "color": "#2e8b57"
+    },
+    {
+      "symbol": "NVDA",
+      "tag": "Recommended Buy",
+      "color": "#2e8b57"
+    },
+    {
+      "symbol": "GNLN",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "TSLL",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "MITQ",
+      "tag": "Suggested Buy",
+      "color": "#3cb371"
+    },
+    {
+      "symbol": "DNN",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "BBAI",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "PCSA",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    },
+    {
+      "symbol": "SOXL",
+      "tag": "Watch Buy",
+      "color": "#98fb98"
+    }
+  ],
+  "sellLong": [
+    {
+      "symbol": "HCTI",
+      "tag": "Strong Sell",
+      "color": "#8b0000"
+    },
+    {
+      "symbol": "DFLI",
+      "tag": "Recommended Sell",
+      "color": "#b22222"
+    },
+    {
+      "symbol": "NVDA",
+      "tag": "Recommended Sell",
+      "color": "#b22222"
+    },
+    {
+      "symbol": "GNLN",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "TSLL",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "MITQ",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "DNN",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "BBAI",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "PCSA",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "SOXL",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    }
+  ],
+  "sellShort": [
+    {
+      "symbol": "HCTI",
+      "tag": "Strong Sell",
+      "color": "#8b0000"
+    },
+    {
+      "symbol": "DFLI",
+      "tag": "Recommended Sell",
+      "color": "#b22222"
+    },
+    {
+      "symbol": "NVDA",
+      "tag": "Recommended Sell",
+      "color": "#b22222"
+    },
+    {
+      "symbol": "GNLN",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "TSLL",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "MITQ",
+      "tag": "Suggested Sell",
+      "color": "#dc143c"
+    },
+    {
+      "symbol": "DNN",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "BBAI",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "PCSA",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    },
+    {
+      "symbol": "SOXL",
+      "tag": "Watch Sell",
+      "color": "#ff6347"
+    }
   ]
 }
