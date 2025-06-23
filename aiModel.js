@@ -1,7 +1,9 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const API_KEY = 'HiMYIrmgSPwjGAnSLTP2luGvKu9MKIye';
+require('dotenv').config();
+const API_KEY = process.env.FMP_API_KEY;
+
 const BASE = 'https://financialmodelingprep.com/api/v3';
 const CACHE_FILE = './ai_picks.json';
 
