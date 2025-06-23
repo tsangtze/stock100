@@ -214,6 +214,16 @@ app.post('/alert-favorite', async (req, res) => {
     res.status(500).json({ error: 'Failed to send email alert', message: err.message });
   }
 });
+// Add a manual fetch trigger
+app.get("/manual-fetch", async (req, res) => {
+  try {
+    await fetchAllAndCache();
+    res.send("✅ Manual fetch completed and cached.");
+  } catch (err) {
+    console.error("❌ Manual fetch failed:", err);
+    res.status(500).send("❌ Manual fetch failed.");
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Stock100 backend running on http://localhost:${PORT}`);
