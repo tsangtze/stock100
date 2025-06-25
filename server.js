@@ -1,4 +1,4 @@
-// ✅ server.js – Updated with Full 5-Group Fetch Scheduling and All Features
+// ✅ server.js – Full Feature Backend with Algorithmic Screen + Technical Analysis
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -16,12 +16,10 @@ const {
   getAIPicksBuy,
   getAIPicksSell
 } = require('./aiModel');
-
 const { sendFavoriteAlert } = require('./functionssendEmailAlert');
 
 app.use(cors());
 app.use(express.json());
-
 if (!fs.existsSync('./cache')) fs.mkdirSync('./cache');
 
 app.get('/', (req, res) => {
@@ -43,9 +41,7 @@ function incrementFetchCounter() {
 
 async function fetchAndCache(endpoint) {
   try {
-    const url = endpoint.includes('?')
-      ? `${BASE}/${endpoint}&apikey=${API_KEY}`
-      : `${BASE}/${endpoint}?apikey=${API_KEY}`;
+    const url = endpoint.includes('?') ? `${BASE}/${endpoint}&apikey=${API_KEY}` : `${BASE}/${endpoint}?apikey=${API_KEY}`;
     console.log('🌐 Fetching:', url);
     const res = await fetch(url);
     const data = await res.json();
@@ -73,7 +69,6 @@ function isMarketOpen() {
 // ✅ Group 1: Every 6 min (Gainers, Losers)
 cron.schedule('*/6 * * * 1-5', async () => {
   if (!isMarketOpen()) return;
-  console.log('🔁 Group 1: Fetching Gainers/Losers...');
   await fetchAndCache('stock_market/gainers');
   await fetchAndCache('stock_market/losers');
 });
@@ -81,28 +76,24 @@ cron.schedule('*/6 * * * 1-5', async () => {
 // ✅ Group 2: Every 30 min (Volume)
 cron.schedule('*/30 * * * 1-5', async () => {
   if (!isMarketOpen()) return;
-  console.log('🔁 Group 2: Fetching Volume...');
   await fetchAndCache('stock_market/dollar_volume');
 });
 
 // ✅ Group 3: 3x/day (Volatile, RSI, Unusual)
 cron.schedule('30 13,16,19 * * 1-5', async () => {
-  console.log('🔁 Group 3: Fetching Volatile, RSI, Unusual...');
   await fetchAndCache('stock_market/most_volatile');
   await fetchAndCache('technical_indicator/rsi?period=14&type=stock&sort=desc');
   await fetchAndCache('technical_indicator/rsi?period=14&type=stock&sort=asc');
   await fetchAndCache('stock_market/unusual_volume');
 });
 
-// ✅ Group 4: AI Picks 2x/day at 10am + 3pm ET
+// ✅ Group 4: AI Picks 2x/day
 cron.schedule('0 14,19 * * 1-5', async () => {
-  console.log('🧠 Group 4: AI Picks...');
   await getTopStockPredictions();
 });
 
-// ✅ Group 5: Once/day at 10am ET (sentiment, pe, gap, etc.)
+// ✅ Group 5: Sentiment, Gap, PE – Once per day
 cron.schedule('0 14 * * 1-5', async () => {
-  console.log('📊 Group 5: Sentiment, P/E, Gap Up/Down...');
   await fetchAndCache('stock_news?sentiment=positive&limit=100');
   await fetchAndCache('stock_news?sentiment=negative&limit=100');
   await fetchAndCache('stock_market/gap_up');
@@ -111,33 +102,40 @@ cron.schedule('0 14 * * 1-5', async () => {
   await fetchAndCache('stock-screener?limit=100&sort=desc&column=pe');
 });
 
+// ✅ Group 6: Scheduled Technical Analysis (once per day, heavy load)
+cron.schedule('0 15 * * 1-5', async () => {
+  const indicators = [
+    'technical_indicator/macd',
+    'technical_indicator/bollinger',
+    'technical_indicator/stochastic',
+    'technical_indicator/sma50',
+    'technical_indicator/sma200'
+  ];
+  for (let ind of indicators) {
+    await fetchAndCache(`${ind}?type=stock&limit=100`);
+  }
+});
+
+// 🧠 AI Endpoints
 app.get('/ai-picks', async (req, res) => {
-  try {
-    const picks = await getTopStockPredictions();
-    res.json(picks);
-  } catch (err) {
+  try { res.json(await getTopStockPredictions()); } catch (err) {
     res.status(500).json({ error: 'AI picks failed', message: err.message });
   }
 });
 
 app.get('/ai-picks-buy', async (req, res) => {
-  try {
-    const picks = await getAIPicksBuy();
-    res.json(picks);
-  } catch (err) {
+  try { res.json(await getAIPicksBuy()); } catch (err) {
     res.status(500).json({ error: 'AI Buy picks failed', message: err.message });
   }
 });
 
 app.get('/ai-picks-sell', async (req, res) => {
-  try {
-    const picks = await getAIPicksSell();
-    res.json(picks);
-  } catch (err) {
+  try { res.json(await getAIPicksSell()); } catch (err) {
     res.status(500).json({ error: 'AI Sell picks failed', message: err.message });
   }
 });
 
+// 📁 Cached Endpoints
 const dataRoutes = [
   { path: '/gainers', file: 'stock_market_gainers.json' },
   { path: '/losers', file: 'stock_market_losers.json' },
@@ -149,7 +147,7 @@ const dataRoutes = [
   { path: '/rsi-low', file: 'technical_indicator_rsi_period_14_type_stock_sort_asc.json' }
 ];
 
-dataRoutes.forEach(({ path, file }) => {
+for (let { path, file } of dataRoutes) {
   app.get(path, (req, res) => {
     try {
       const data = JSON.parse(fs.readFileSync(`./cache/${file}`));
@@ -158,13 +156,13 @@ dataRoutes.forEach(({ path, file }) => {
       res.status(500).json({ error: `No data available for ${path}` });
     }
   });
-});
+}
 
+// 📊 PE and Sentiment
 app.get('/pe-low', async (req, res) => {
   try {
     const url = `${BASE}/stock-screener?limit=100&sort=asc&column=pe&apikey=${API_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await (await fetch(url)).json();
     res.json(data);
   } catch {
     res.status(500).json({ error: 'Failed to fetch PE low data' });
@@ -174,8 +172,7 @@ app.get('/pe-low', async (req, res) => {
 app.get('/pe-high', async (req, res) => {
   try {
     const url = `${BASE}/stock-screener?limit=100&sort=desc&column=pe&apikey=${API_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await (await fetch(url)).json();
     res.json(data);
   } catch {
     res.status(500).json({ error: 'Failed to fetch PE high data' });
@@ -185,8 +182,7 @@ app.get('/pe-high', async (req, res) => {
 app.get('/sentiment-positive', async (req, res) => {
   try {
     const url = `${BASE}/stock_news?sentiment=positive&limit=100&apikey=${API_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await (await fetch(url)).json();
     res.json(data);
   } catch {
     res.status(500).json({ error: 'Failed to fetch positive sentiment news' });
@@ -196,14 +192,14 @@ app.get('/sentiment-positive', async (req, res) => {
 app.get('/sentiment-negative', async (req, res) => {
   try {
     const url = `${BASE}/stock_news?sentiment=negative&limit=100&apikey=${API_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await (await fetch(url)).json();
     res.json(data);
   } catch {
     res.status(500).json({ error: 'Failed to fetch negative sentiment news' });
   }
 });
 
+// ⭐ Favorite Alert
 app.post('/alert-favorite', async (req, res) => {
   const { email, symbol } = req.body;
   if (!email || !symbol) return res.status(400).json({ error: 'Missing email or symbol' });
@@ -214,14 +210,24 @@ app.post('/alert-favorite', async (req, res) => {
     res.status(500).json({ error: 'Failed to send email alert', message: err.message });
   }
 });
-// Add a manual fetch trigger
-app.get("/manual-fetch", async (req, res) => {
+
+// 🔄 Manual Cache
+app.get('/manual-fetch', async (req, res) => {
   try {
     await fetchAllAndCache();
-    res.send("✅ Manual fetch completed and cached.");
+    res.send('✅ Manual fetch completed and cached.');
   } catch (err) {
-    console.error("❌ Manual fetch failed:", err);
-    res.status(500).send("❌ Manual fetch failed.");
+    res.status(500).send('❌ Manual fetch failed.');
+  }
+});
+
+// 📊 Algorithmic Screens (mock for now)
+app.get('/algorithmic-screens', (req, res) => {
+  try {
+    const data = fs.readFileSync('./cache/algorithmic_screens.json', 'utf-8');
+    res.json(JSON.parse(data));
+  } catch (err) {
+    res.status(500).json({ error: 'Could not load algorithmic screens.' });
   }
 });
 

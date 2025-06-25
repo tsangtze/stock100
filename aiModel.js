@@ -1,9 +1,9 @@
+// aiModel.js – Updated with Hold Category + Raw Scores
 const fs = require('fs');
 const fetch = require('node-fetch');
 
 require('dotenv').config();
 const API_KEY = process.env.FMP_API_KEY;
-
 const BASE = 'https://financialmodelingprep.com/api/v3';
 const CACHE_FILE = './ai_picks.json';
 
@@ -17,11 +17,13 @@ function rankTag(index, type) {
     if (index <= 2) return { tag: "Recommended Buy", color: "#2e8b57" };
     if (index <= 5) return { tag: "Suggested Buy", color: "#3cb371" };
     return { tag: "Watch Buy", color: "#98fb98" };
-  } else {
+  } else if (type === 'sell') {
     if (index === 0) return { tag: "Strong Sell", color: "#8b0000" };
     if (index <= 2) return { tag: "Recommended Sell", color: "#b22222" };
     if (index <= 5) return { tag: "Suggested Sell", color: "#dc143c" };
     return { tag: "Watch Sell", color: "#ff6347" };
+  } else {
+    return { tag: "Hold", color: "#999" };
   }
 }
 
@@ -60,15 +62,11 @@ async function getTopStockPredictions() {
     const newsData = await newsRes.json();
     const gapData = await gapRes.json();
 
-    if (!Array.isArray(volData)) throw new Error('Volume data invalid');
-    if (!Array.isArray(rsiData)) throw new Error('RSI data invalid');
-    if (!Array.isArray(mcapData)) throw new Error('MarketCap data invalid');
-
     const volMap = {}; volData.forEach(d => volMap[d.symbol] = +d.volume || 0);
     const rsiMap = {}; rsiData.forEach(d => rsiMap[d.symbol] = +d.rsi || 50);
     const capMap = {}; mcapData.forEach(d => capMap[d.symbol] = +d.marketCap || 1e9);
-    const newsSet = Array.isArray(newsData) ? new Set(newsData.map(n => n.symbol)) : new Set();
-    const gapSet = Array.isArray(gapData) ? new Set(gapData.map(n => n.symbol)) : new Set();
+    const newsSet = new Set(newsData.map(n => n.symbol));
+    const gapSet = new Set(gapData.map(n => n.symbol));
 
     const baseData = epsOK ? epsData : volData;
 
@@ -91,55 +89,66 @@ async function getTopStockPredictions() {
       const newsScore = newsBoost * 100;
       const gapScore = gapBoost * 100;
 
+      const longBuyScore = Math.round((epsOK ? epsScore * 0.4 : 0) + capScore * 0.4 + newsScore * 0.2);
+      const shortBuyScore = Math.round(volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4);
+      const longSellScore = 100 - longBuyScore;
+      const shortSellScore = 100 - shortBuyScore;
+
+      const averageScore = (longBuyScore + shortBuyScore + (100 - longSellScore) + (100 - shortSellScore)) / 4;
+
       return {
         symbol,
-        longBuyScore: Math.round((epsOK ? epsScore * 0.4 : 0) + capScore * 0.4 + newsScore * 0.2),
-        shortBuyScore: Math.round(volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4),
-        longSellScore: Math.round(100 - ((epsOK ? epsScore * 0.4 : 0) + capScore * 0.4 + newsScore * 0.2)),
-        shortSellScore: Math.round(100 - (volumeScore * 0.3 + rsiScore * 0.3 + gapScore * 0.4))
+        longBuyScore,
+        shortBuyScore,
+        longSellScore,
+        shortSellScore,
+        averageScore
       };
     });
 
+    // Sort and tag
     const buyLong = predictions.sort((a, b) => b.longBuyScore - a.longBuyScore).slice(0, 10)
-      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'buy') }));
+      .map((s, i) => ({ ...s, ...rankTag(i, 'buy') }));
+
     const buyShort = predictions.sort((a, b) => b.shortBuyScore - a.shortBuyScore).slice(0, 10)
-      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'buy') }));
+      .map((s, i) => ({ ...s, ...rankTag(i, 'buy') }));
+
     const sellLong = predictions.sort((a, b) => a.longSellScore - b.longSellScore).slice(0, 10)
-      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'sell') }));
+      .map((s, i) => ({ ...s, ...rankTag(i, 'sell') }));
+
     const sellShort = predictions.sort((a, b) => a.shortSellScore - b.shortSellScore).slice(0, 10)
-      .map((s, i) => ({ symbol: s.symbol, ...rankTag(i, 'sell') }));
+      .map((s, i) => ({ ...s, ...rankTag(i, 'sell') }));
 
-    const result = { date: today, buyLong, buyShort, sellLong, sellShort };
+    const hold = predictions.filter(p =>
+      p.longBuyScore >= 40 && p.longBuyScore <= 60 &&
+      p.shortBuyScore >= 40 && p.shortBuyScore <= 60
+    ).slice(0, 20).map(s => ({ ...s, ...rankTag(null, 'hold') }));
 
-    if (
-      Array.isArray(buyLong) && Array.isArray(buyShort) &&
-      Array.isArray(sellLong) && Array.isArray(sellShort)
-    ) {
-      fs.writeFileSync(CACHE_FILE, JSON.stringify(result, null, 2));
-      console.log('✅ AI Picks (Long/Short) cached.');
-    }
+    const result = {
+      date: today,
+      buyLong,
+      buyShort,
+      sellLong,
+      sellShort,
+      hold
+    };
 
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(result, null, 2));
+    console.log('✅ AI Picks (Buy/Sell/Hold) cached.');
     return result;
 
   } catch (err) {
     console.error('❌ AI prediction error:', err);
-
     if (fs.existsSync(CACHE_FILE)) {
       try {
         const backup = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
         console.log('🧠 AI picks fallback loaded from cache.');
-        return {
-          buyLong: Array.isArray(backup.buyLong) ? backup.buyLong : [],
-          buyShort: Array.isArray(backup.buyShort) ? backup.buyShort : [],
-          sellLong: Array.isArray(backup.sellLong) ? backup.sellLong : [],
-          sellShort: Array.isArray(backup.sellShort) ? backup.sellShort : []
-        };
+        return backup;
       } catch (e) {
         console.warn('⚠️ Failed to parse backup cache:', e);
       }
     }
-
-    return { buyLong: [], buyShort: [], sellLong: [], sellShort: [] };
+    return { buyLong: [], buyShort: [], sellLong: [], sellShort: [], hold: [] };
   }
 }
 

@@ -1,12 +1,11 @@
+# Ignore node_modules and environment config
 node_modules/
 .env
 ai_picks.json
 
-# Ignore everything inside cache/ except these needed JSON files
-/cache/*
-!/cache/stock_market_gainers.json
-!/cache/stock_market_losers.json
-!/cache/stock_market_gap_up.json
-!/cache/stock_market_gap_down.json
-!/cache/stock_market_dollar_volume.json
-!/cache/stock_market_most_volatile.json
+# TEMPORARILY allow all cache files
+!cache/
+!cache/*.json
+
+# Allow usage tracking count file
+!fetchCount.json
