@@ -1,4 +1,4 @@
-// ✅ server.js – Fully Polished Backend with All Consistent Routes, Full Features, and Stable Fallbacks
+// ✅ server.js – Fully Polished Backend with Logging and Restored Homepage Route
 
 const express = require('express');
 const cors = require('cors');
@@ -35,6 +35,7 @@ function isMarketOpen() {
 cron.schedule('* * * * *', async () => {
     if (!isMarketOpen()) return console.log('⏸️ Market closed, skipping bulk fetch.');
     try {
+        console.log('🚀 Starting bulk fetch...');
         const symbolsRes = await fetch(`${BASE_URL}/stock/list?apikey=${API_KEY}`);
         const symbolsData = await symbolsRes.json();
         const allSymbols = symbolsData.filter(s => s.symbol).map(s => s.symbol).slice(0, 5000);
@@ -70,14 +71,18 @@ const targetRoutes = [
 targetRoutes.forEach(route => {
     app.get(`/${route}`, (req, res) => {
         try {
+            console.log(`📥 Received request: /${route}`);
             let data = {};
             if (fs.existsSync(ALGO_CACHE)) {
                 data = JSON.parse(fs.readFileSync(ALGO_CACHE, 'utf-8'));
+                console.log(`✅ Loaded algo-screens.json for /${route}`);
             } else {
-                console.warn('⚠️ algo-screens.json missing, returning empty array for', route);
+                console.warn(`⚠️ algo-screens.json missing for /${route}`);
                 return res.status(200).json([]);
             }
-            res.json(data[route] || []);
+            const payload = data[route] || [];
+            console.log(`📊 Responding with ${payload.length} items for /${route}`);
+            res.json(payload);
         } catch (err) {
             console.error(`❌ Error on /${route}:`, err);
             res.status(500).json({ error: `Failed to load ${route}` });
@@ -96,14 +101,21 @@ const coreRoutes = [
 coreRoutes.forEach(route => {
     app.get(route.path, (req, res) => {
         try {
+            console.log(`📥 Received request: ${route.path}`);
             const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
             const sorted = data.sort(route.sortFn);
+            console.log(`📊 Responding with ${sorted.length} items for ${route.path}`);
             res.json(sorted);
         } catch (err) {
             console.error(`❌ Error on ${route.path}:`, err);
             res.status(500).json({ error: `Failed to load ${route.path.replace('/', '')}` });
         }
     });
+});
+
+// Restore homepage route
+app.get('/', (req, res) => {
+    res.send('✅ Stock100 Backend is running. Use /gainers, /losers, /ai-picks-buy, etc. to fetch data.');
 });
 
 app.listen(PORT, () => {
