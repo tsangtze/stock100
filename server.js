@@ -105,6 +105,9 @@ coreRoutes.forEach(route => {
         }
     });
 });
+app.get('/', (req, res) => {
+    res.send('✅ Stock100 Backend is running. Use /gainers, /losers, /ai-picks-buy, etc. to fetch data.');
+});
 
 app.listen(PORT, () => {
     console.log(`✅ Server running on port ${PORT}`);
