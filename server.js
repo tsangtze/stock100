@@ -1,4 +1,4 @@
-// ✅ server.js – FINAL CLEAN FULL BACKEND WITH TRUE 1/MIN BULK FETCH + ADVANCED FILTERING VIA DAILY TECH DATA
+// ✅ server.js – FINAL CLEAN FULL BACKEND WITH TRUE 1/MIN BULK FETCH + ADVANCED FILTERING + AI/TECH ROUTES
 
 const express = require('express');
 const cors = require('cors');
@@ -102,21 +102,28 @@ cron.schedule('* * * * *', async () => {
     }
 });
 
-// Add safe fallback for stock_bulk.json
-let bulkData = [];
-try {
-    const fileContent = fs.readFileSync('./cache/stock_bulk.json', 'utf-8');
-    bulkData = JSON.parse(fileContent);
-    console.log("✅ stock_bulk.json loaded");
-} catch (err) {
-    console.error("⚠️ stock_bulk.json not found, initializing with empty array.");
-    bulkData = [];
-}
+// Serve AI/TECH JSON routes for frontend fetch
+const routes = [
+    'ai-picks-buy','ai-picks-sell','overbought','oversold','volatility','trend-strength',
+    'top-100-eps','top-100-momentum-50ma','top-100-momentum-200ma','top-100-high-beta','top-100-low-beta','top-100-consolidation'
+];
 
-// Ensure server listens on PORT for Render
+routes.forEach(route => {
+    app.get(`/${route}`, (req, res) => {
+        try {
+            if (fs.existsSync(ALGO_CACHE)) {
+                const data = JSON.parse(fs.readFileSync(ALGO_CACHE));
+                return res.json(data[route] || { message: 'No data available for this route.' });
+            } else {
+                return res.json({ message: 'Cache not ready yet, try again shortly.' });
+            }
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Server error' });
+        }
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`✅ Server running on port ${PORT}`);
 });
-
-// Leave other cron jobs and routes unchanged
-// You can restart backend safely after pasting this file.
