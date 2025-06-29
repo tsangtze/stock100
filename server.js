@@ -102,5 +102,15 @@ cron.schedule('* * * * *', async () => {
     }
 });
 
+// Add safe fallback for stock_bulk.json
+let bulkData = [];
+try {
+    const fileContent = fs.readFileSync('./cache/stock_bulk.json', 'utf-8');
+    bulkData = JSON.parse(fileContent);
+} catch (err) {
+    console.error("⚠️ stock_bulk.json not found, initializing with empty array.");
+    bulkData = [];
+}
+
 // Leave other cron jobs and routes unchanged
 // You can restart backend safely after pasting this file.
