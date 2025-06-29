@@ -1,11 +1,18 @@
-# Ignore node_modules and environment config
+# Node and env files
 node_modules/
 .env
 ai_picks.json
 
-# TEMPORARILY allow all cache files
+# Cache JSON data (TEMPORARILY allow)
 !cache/
 !cache/*.json
 
-# Allow usage tracking count file
+# Track usage counter file
 !fetchCount.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional — REMOVE if you want to keep your VS Code settings in Git)
+.vscode/

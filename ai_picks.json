@@ -1,211 +1,412 @@
 {
-  "date": "2025-06-21",
+  "date": "2025-06-26",
   "buyLong": [
     {
-      "symbol": "HCTI",
+      "symbol": "MTPS.JK",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Strong Buy",
       "color": "#0a7f00"
     },
     {
-      "symbol": "DFLI",
+      "symbol": "2852.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Buy",
       "color": "#2e8b57"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "SNG.L",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Buy",
       "color": "#2e8b57"
     },
     {
-      "symbol": "GNLN",
+      "symbol": "GPACF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "TSLL",
+      "symbol": "MUSH.V",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "MITQ",
+      "symbol": "CCWOF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "DNN",
+      "symbol": "CDGXY",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "BBAI",
+      "symbol": "RARMF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "PCSA",
+      "symbol": "POH1.DE",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "SOXL",
+      "symbol": "2611.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     }
   ],
   "buyShort": [
     {
-      "symbol": "HCTI",
+      "symbol": "MTPS.JK",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Strong Buy",
       "color": "#0a7f00"
     },
     {
-      "symbol": "DFLI",
+      "symbol": "2852.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Buy",
       "color": "#2e8b57"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "SNG.L",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Buy",
       "color": "#2e8b57"
     },
     {
-      "symbol": "GNLN",
+      "symbol": "GPACF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "TSLL",
+      "symbol": "MUSH.V",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "MITQ",
+      "symbol": "CCWOF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Buy",
       "color": "#3cb371"
     },
     {
-      "symbol": "DNN",
+      "symbol": "CDGXY",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "BBAI",
+      "symbol": "RARMF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "PCSA",
+      "symbol": "POH1.DE",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     },
     {
-      "symbol": "SOXL",
+      "symbol": "2611.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Buy",
       "color": "#98fb98"
     }
   ],
   "sellLong": [
     {
-      "symbol": "HCTI",
+      "symbol": "MTPS.JK",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Strong Sell",
       "color": "#8b0000"
     },
     {
-      "symbol": "DFLI",
+      "symbol": "2852.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Sell",
       "color": "#b22222"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "SNG.L",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Sell",
       "color": "#b22222"
     },
     {
-      "symbol": "GNLN",
+      "symbol": "GPACF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "TSLL",
+      "symbol": "MUSH.V",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "MITQ",
+      "symbol": "CCWOF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "DNN",
+      "symbol": "CDGXY",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "BBAI",
+      "symbol": "RARMF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "PCSA",
+      "symbol": "POH1.DE",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "SOXL",
+      "symbol": "2611.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     }
   ],
   "sellShort": [
     {
-      "symbol": "HCTI",
+      "symbol": "MTPS.JK",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Strong Sell",
       "color": "#8b0000"
     },
     {
-      "symbol": "DFLI",
+      "symbol": "2852.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Sell",
       "color": "#b22222"
     },
     {
-      "symbol": "NVDA",
+      "symbol": "SNG.L",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Recommended Sell",
       "color": "#b22222"
     },
     {
-      "symbol": "GNLN",
+      "symbol": "GPACF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "TSLL",
+      "symbol": "MUSH.V",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "MITQ",
+      "symbol": "CCWOF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Suggested Sell",
       "color": "#dc143c"
     },
     {
-      "symbol": "DNN",
+      "symbol": "CDGXY",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "BBAI",
+      "symbol": "RARMF",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "PCSA",
+      "symbol": "POH1.DE",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     },
     {
-      "symbol": "SOXL",
+      "symbol": "2611.TW",
+      "longBuyScore": null,
+      "shortBuyScore": null,
+      "longSellScore": null,
+      "shortSellScore": null,
+      "averageScore": null,
       "tag": "Watch Sell",
       "color": "#ff6347"
     }
-  ]
+  ],
+  "hold": []
 }
