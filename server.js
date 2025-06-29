@@ -1,4 +1,4 @@
-// ✅ server.js – Full Backend with All Consistent Routes and No Lost Features
+// ✅ server.js – Fully Polished Backend with All Consistent Routes, Full Features, and Stable Fallbacks
 
 const express = require('express');
 const cors = require('cors');
@@ -60,8 +60,8 @@ cron.schedule('* * * * *', async () => {
     }
 });
 
-// Helper to safely load algo screens
-targetRoutes = [
+// Advanced routes for algo-screens
+const targetRoutes = [
     'ai-picks-buy', 'ai-picks-sell', 'overbought', 'oversold', 'volatility',
     'trend-strength', 'top-100-eps', 'top-100-momentum-50ma', 'top-100-momentum-200ma',
     'top-100-high-beta', 'top-100-low-beta', 'top-100-consolidation'
@@ -71,70 +71,39 @@ targetRoutes.forEach(route => {
     app.get(`/${route}`, (req, res) => {
         try {
             let data = {};
-            try {
+            if (fs.existsSync(ALGO_CACHE)) {
                 data = JSON.parse(fs.readFileSync(ALGO_CACHE, 'utf-8'));
-            } catch {
-                console.error('⚠️ algo-screens.json missing or unreadable, returning empty array');
+            } else {
+                console.warn('⚠️ algo-screens.json missing, returning empty array for', route);
                 return res.status(200).json([]);
             }
-            if (data[route]) {
-                res.json(data[route]);
-            } else {
-                res.status(200).json([]);
-            }
+            res.json(data[route] || []);
         } catch (err) {
-            console.error(err);
+            console.error(`❌ Error on /${route}:`, err);
             res.status(500).json({ error: `Failed to load ${route}` });
         }
     });
 });
 
-// Gainers route
-app.get('/gainers', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
-        const sorted = data.sort((a, b) => (b.changesPercentage || 0) - (a.changesPercentage || 0));
-        res.json(sorted);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Failed to load gainers' });
-    }
-});
+// Core sorted routes using realtime data
+const coreRoutes = [
+    { path: '/gainers', sortFn: (a, b) => (b.changesPercentage || 0) - (a.changesPercentage || 0) },
+    { path: '/losers', sortFn: (a, b) => (a.changesPercentage || 0) - (b.changesPercentage || 0) },
+    { path: '/volume', sortFn: (a, b) => (b.volume || 0) - (a.volume || 0) },
+    { path: '/most-volatile', sortFn: (a, b) => (b.beta || 0) - (a.beta || 0) },
+];
 
-// Losers route
-app.get('/losers', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
-        const sorted = data.sort((a, b) => (a.changesPercentage || 0) - (b.changesPercentage || 0));
-        res.json(sorted);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Failed to load losers' });
-    }
-});
-
-// Volume route
-app.get('/volume', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
-        const sorted = data.sort((a, b) => (b.volume || 0) - (a.volume || 0));
-        res.json(sorted);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Failed to load volume' });
-    }
-});
-
-// Most volatile route
-app.get('/most-volatile', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
-        const sorted = data.sort((a, b) => (b.beta || 0) - (a.beta || 0));
-        res.json(sorted);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Failed to load most volatile' });
-    }
+coreRoutes.forEach(route => {
+    app.get(route.path, (req, res) => {
+        try {
+            const data = JSON.parse(fs.readFileSync(REALTIME_CACHE, 'utf-8'));
+            const sorted = data.sort(route.sortFn);
+            res.json(sorted);
+        } catch (err) {
+            console.error(`❌ Error on ${route.path}:`, err);
+            res.status(500).json({ error: `Failed to load ${route.path.replace('/', '')}` });
+        }
+    });
 });
 
 app.listen(PORT, () => {
