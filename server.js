@@ -107,10 +107,16 @@ let bulkData = [];
 try {
     const fileContent = fs.readFileSync('./cache/stock_bulk.json', 'utf-8');
     bulkData = JSON.parse(fileContent);
+    console.log("✅ stock_bulk.json loaded");
 } catch (err) {
     console.error("⚠️ stock_bulk.json not found, initializing with empty array.");
     bulkData = [];
 }
+
+// Ensure server listens on PORT for Render
+app.listen(PORT, () => {
+    console.log(`✅ Server running on port ${PORT}`);
+});
 
 // Leave other cron jobs and routes unchanged
 // You can restart backend safely after pasting this file.
