@@ -1,23 +1,23 @@
 {
   "rsi": [
-    { "symbol": "AAPL", "rsi": 75 },
-    { "symbol": "MSFT", "rsi": 68 },
-    { "symbol": "TSLA", "rsi": 82 },
-    { "symbol": "GOOG", "rsi": 22 },
-    { "symbol": "AMZN", "rsi": 18 },
+    { "symbol": "AAPL", "rsi": 72 },
+    { "symbol": "MSFT", "rsi": 65 },
+    { "symbol": "TSLA", "rsi": 18 },
+    { "symbol": "GOOG", "rsi": 55 },
+    { "symbol": "AMZN", "rsi": 22 },
+    { "symbol": "META", "rsi": 85 },
     { "symbol": "NVDA", "rsi": 45 },
-    { "symbol": "META", "rsi": 55 },
-    { "symbol": "NFLX", "rsi": 65 }
+    { "symbol": "NFLX", "rsi": 28 }
   ],
   "sma50": [
     { "symbol": "AAPL", "sma50": 190 },
-    { "symbol": "MSFT", "sma50": 320 },
+    { "symbol": "MSFT", "sma50": 310 },
     { "symbol": "TSLA", "sma50": 260 },
     { "symbol": "GOOG", "sma50": 130 },
     { "symbol": "AMZN", "sma50": 140 },
-    { "symbol": "NVDA", "sma50": 700 },
     { "symbol": "META", "sma50": 310 },
-    { "symbol": "NFLX", "sma50": 400 }
+    { "symbol": "NVDA", "sma50": 680 },
+    { "symbol": "NFLX", "sma50": 390 }
   ],
   "sma200": [
     { "symbol": "AAPL", "sma200": 180 },
@@ -25,8 +25,8 @@
     { "symbol": "TSLA", "sma200": 250 },
     { "symbol": "GOOG", "sma200": 125 },
     { "symbol": "AMZN", "sma200": 135 },
-    { "symbol": "NVDA", "sma200": 650 },
     { "symbol": "META", "sma200": 300 },
+    { "symbol": "NVDA", "sma200": 650 },
     { "symbol": "NFLX", "sma200": 380 }
   ]
 }
