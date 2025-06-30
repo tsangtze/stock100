@@ -16,3 +16,6 @@ Thumbs.db
 
 # VS Code settings (optional — REMOVE if you want to keep your VS Code settings in Git)
 .vscode/
+
+# Ignore Yahoo fetched JSON cache files
+*_last5days.json
