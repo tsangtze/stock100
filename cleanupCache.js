@@ -1,29 +1,30 @@
+// ✅ cleanupCache.js – Updated to skip technical-screens.json for stable advanced routes
+
 const fs = require('fs');
 const path = require('path');
 
-const KEEP_FILES = [
-  'stock_bulk.json',
-  'favorites.json',
-  'realtime-quote.json',
-  'algo-screens.json'
-];
+const CACHE_DIR = path.join(__dirname, 'cache');
 
-module.exports = function cleanup() {
-  const cacheDir = path.join(__dirname, 'cache');
-  fs.readdir(cacheDir, (err, files) => {
-    if (err) return console.error("❌ Failed to read cache folder:", err);
+function cleanupCache() {
+    if (!fs.existsSync(CACHE_DIR)) return;
+
+    const files = fs.readdirSync(CACHE_DIR);
 
     files.forEach(file => {
-      if (!KEEP_FILES.includes(file)) {
-        const filePath = path.join(cacheDir, file);
-        fs.unlink(filePath, err => {
-          if (err) {
-            console.error(`❌ Failed to delete ${file}:`, err);
-          } else {
-            console.log(`🗑️ Deleted old cache file: ${file}`);
-          }
-        });
-      }
+        // Skip critical files for advanced features
+        if (file === 'technical-screens.json') {
+            console.log(`⏩ Skipping ${file} during cleanup (required for advanced routes)`);
+            return;
+        }
+        
+        const filePath = path.join(CACHE_DIR, file);
+        try {
+            fs.unlinkSync(filePath);
+            console.log(`🗑️ Deleted cache file: ${file}`);
+        } catch (err) {
+            console.error(`❌ Error deleting ${file}:`, err);
+        }
     });
-  });
-};
+}
+
+module.exports = cleanupCache;

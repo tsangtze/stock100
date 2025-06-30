@@ -1,8 +1,7 @@
-// ✅ server.js – Fully Polished with Technical Indicator Route Fix and Temporary Logging
+// ✅ server.js – Switched to Yahoo fetch for testing, FMP fetch disabled, all other features untouched
 
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');
 const fs = require('fs');
 const cron = require('node-cron');
 const cleanup = require('./cleanupCache');
@@ -10,8 +9,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 10000;
-const API_KEY = process.env.FMP_API_KEY;
-const BASE_URL = 'https://financialmodelingprep.com/api/v3';
 
 const CACHE_DIR = './cache';
 const REALTIME_CACHE = `${CACHE_DIR}/realtime-quote.json`;
@@ -30,31 +27,25 @@ function isMarketOpen() {
     return day >= 1 && day <= 5 && (hour > 13 || (hour === 13 && min >= 30)) && hour < 20;
 }
 
-cron.schedule('* * * * *', async () => {
-    if (!isMarketOpen()) return console.log('⏸️ Market closed, skipping bulk fetch.');
+// ✅ Replace FMP fetch with Yahoo fetch for testing, using local yahoo_fetch.py
+cron.schedule('*/30 * * * *', async () => {
+    if (!isMarketOpen()) return console.log('⏸️ Market closed, skipping Yahoo fetch.');
     try {
-        const symbolsRes = await fetch(`${BASE_URL}/stock/list?apikey=${API_KEY}`);
-        const symbolsData = await symbolsRes.json();
-        const allSymbols = symbolsData.filter(s => s.symbol).map(s => s.symbol).slice(0, 5000);
-        const batches = [];
-        for (let i = 0; i < allSymbols.length; i += 200) {
-            batches.push(allSymbols.slice(i, i + 200));
-        }
-        let allQuotes = [];
-        for (const batch of batches) {
-            const res = await fetch(`${BASE_URL}/quote/${batch.join(',')}?apikey=${API_KEY}`);
-            const data = await res.json();
-            if (Array.isArray(data)) allQuotes = allQuotes.concat(data);
-            await new Promise(r => setTimeout(r, 2500));
-        }
-        if (allQuotes.length > 0) {
-            fs.writeFileSync(REALTIME_CACHE, JSON.stringify(allQuotes));
-            console.log(`✅ Bulk quotes cached (${allQuotes.length} stocks)`, new Date().toLocaleTimeString());
-        } else {
-            console.log('⚠️ Bulk fetch returned empty, retaining previous cache.');
-        }
+        console.log('🚀 Running Yahoo fetch test...');
+        const { exec } = require('child_process');
+        exec('python yahoo_fetch.py', (error, stdout, stderr) => {
+            if (error) {
+                console.error(`❌ Yahoo fetch error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`⚠️ Yahoo fetch stderr: ${stderr}`);
+                return;
+            }
+            console.log(`✅ Yahoo fetch output:\n${stdout}`);
+        });
     } catch (err) {
-        console.error('❌ Bulk fetch error:', err.message);
+        console.error('❌ Yahoo fetch execution failed:', err.message);
     }
 });
 
@@ -126,7 +117,18 @@ coreRoutes.forEach(route => {
 });
 
 app.get('/', (req, res) => {
-    res.send('✅ Stock100 Backend is running. Use /gainers, /losers, /ai-picks-buy, /rsi, etc. to fetch data.');
+    res.send('✅ Stock100 Backend (Yahoo Testing) is running. Use /gainers, /losers, /ai-picks-buy, /rsi, etc. to fetch data.');
+});
+// Serve Yahoo JSON data
+const path = require('path');
+app.get('/yahoo/:symbol', (req, res) => {
+    const symbol = req.params.symbol.toUpperCase();
+    const filePath = path.join(__dirname, `${symbol}_last5days.json`);
+    if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+    } else {
+        res.status(404).json({ error: `No data for ${symbol}. Please run yahoo_fetch_batch.py first.` });
+    }
 });
 
 app.listen(PORT, () => {
