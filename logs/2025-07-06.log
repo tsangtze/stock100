@@ -1,0 +1,1269 @@
+2025-07-06T15:43:09.015Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T15:43:09.144Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T15:45:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T15:45:00.260Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T15:45:00.323Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T15:45:00.406Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T16:00:00.025Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T16:00:00.030Z - ⏱️ Running hourly indicators calculation
+2025-07-06T16:00:00.043Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T16:00:00.139Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T16:00:00.254Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T16:00:00.316Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T16:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T16:15:00.133Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T16:15:00.217Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T16:15:00.330Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T16:30:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T16:30:00.124Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T16:30:00.225Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T16:30:00.280Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T16:45:00.023Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T16:45:00.138Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T16:45:00.196Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T16:45:00.260Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:00:00.031Z - ⏱️ Running hourly indicators calculation
+2025-07-06T17:00:00.032Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T17:00:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:00:00.157Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:00:00.312Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:00:00.423Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:15:00.024Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:15:00.133Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:15:00.273Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:15:00.360Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:30:00.016Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:30:00.134Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:30:00.203Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:30:00.294Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:32:31.539Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T17:32:31.656Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T17:32:31.782Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:32:31.893Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:32:31.956Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:32:31.958Z - 📰 Fetching general crypto market news at 9AM ET
+2025-07-06T17:32:31.971Z - ✅ General crypto market news saved.
+2025-07-06T17:32:31.972Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T17:32:31.974Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T17:37:40.174Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T17:37:40.305Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T17:37:40.420Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:37:40.482Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:37:40.544Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:37:40.545Z - 📰 Fetching general crypto market news at 9AM ET
+2025-07-06T17:37:40.546Z - ✅ General crypto market news saved.
+2025-07-06T17:37:40.547Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T17:37:40.548Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T17:42:13.212Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T17:42:13.293Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T17:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:45:00.033Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:45:00.033Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:45:00.051Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T17:45:00.159Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:45:00.160Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:45:00.197Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:45:00.220Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:45:00.221Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:45:00.272Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T17:45:00.281Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:45:00.325Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:45:00.333Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:45:00.379Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T17:45:00.402Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:45:00.445Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T17:52:36.551Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T17:52:36.669Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T17:52:37.342Z - ✅ Stocks fetched for gainers (97 symbols)
+2025-07-06T17:52:37.488Z - ✅ Stocks fetched for losers (14 symbols)
+2025-07-06T17:52:37.560Z - ❌ Error fetching stocks for most_active: Request failed with status code 404
+2025-07-06T17:52:37.562Z - ⚡ Generating AI Picks with Buy/Sell Bias
+2025-07-06T17:52:37.567Z - ✅ AI Picks generated: 0 Buy, 0 Sell, 20 Neutral
+2025-07-06T17:52:37.567Z - 📰 Fetching news for AAPL
+2025-07-06T17:52:37.569Z - ✅ News saved for AAPL
+2025-07-06T17:57:04.912Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T17:57:05.024Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T17:57:05.412Z - ✅ Stocks fetched for gainers (97 symbols)
+2025-07-06T17:57:05.529Z - ✅ Stocks fetched for losers (14 symbols)
+2025-07-06T17:57:05.530Z - ⚡ Generating AI Picks with Buy/Sell Bias
+2025-07-06T17:57:05.535Z - ✅ AI Picks generated: 0 Buy, 0 Sell, 20 Neutral
+2025-07-06T17:57:05.536Z - 📰 Fetching news for AAPL
+2025-07-06T17:57:05.537Z - ✅ News saved for AAPL
+2025-07-06T18:00:00.037Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.039Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.040Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.043Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.045Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.047Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.047Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.051Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.052Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.053Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.053Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.053Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.056Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.057Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.061Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.065Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.066Z - ⏱️ Running hourly indicators calculation
+2025-07-06T18:00:00.067Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.067Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.067Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.067Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.068Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.068Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.069Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.069Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.070Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.070Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.070Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.071Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.071Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.071Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.072Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.072Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.072Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.073Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.072Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.073Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.073Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.074Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.074Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.075Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.075Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.075Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.076Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.076Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.077Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.077Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.078Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.078Z - ✅ Indicators calculated for BMNR
+2025-07-06T18:00:00.078Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.078Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.079Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.079Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.079Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.079Z - ✅ Indicators calculated for RUN
+2025-07-06T18:00:00.079Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.080Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.081Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.081Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.081Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.081Z - ✅ Indicators calculated for TRIP
+2025-07-06T18:00:00.081Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.081Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.082Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.083Z - ✅ Indicators calculated for DDOG
+2025-07-06T18:00:00.083Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.083Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.084Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.084Z - ✅ Indicators calculated for SYM
+2025-07-06T18:00:00.084Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.085Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.086Z - ✅ Indicators calculated for PL
+2025-07-06T18:00:00.087Z - ✅ Indicators calculated for TMC
+2025-07-06T18:00:00.088Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:00:00.088Z - ✅ Indicators calculated for RNW
+2025-07-06T18:00:00.089Z - ✅ Indicators calculated for GDS
+2025-07-06T18:00:00.089Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T18:00:00.090Z - ✅ Indicators calculated for VNET
+2025-07-06T18:00:00.183Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.185Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.188Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.191Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.223Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.241Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.248Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.248Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.248Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.269Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:00:00.280Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.299Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:00:00.309Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:00:00.314Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:00:00.337Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:00:00.354Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:00:00.380Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:00:00.439Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.024Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.026Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.026Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.036Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.037Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.037Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:15:00.134Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.161Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.196Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.202Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.215Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.231Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.262Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.262Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.270Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.288Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.321Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.350Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.351Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.477Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.549Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:15:00.671Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:15:00.789Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:00.883Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:15:54.142Z - ✅ Stock100 Yahoo backend initialized.
+2025-07-06T18:15:54.268Z - 🚀 Stock100 Yahoo backend is live on port 4000
+2025-07-06T18:15:58.117Z - ✅ Stocks fetched for gainers (97 symbols)
+2025-07-06T18:15:58.382Z - ✅ Stocks fetched for losers (14 symbols)
+2025-07-06T18:15:58.383Z - ⚡ Generating AI Picks with comparative scoring
+2025-07-06T18:15:58.397Z - ✅ AI Picks generated: 10 Buy, 10 Sell
+2025-07-06T18:15:58.398Z - 📰 Fetching news for AAPL
+2025-07-06T18:15:58.399Z - ✅ News saved for AAPL
+2025-07-06T18:30:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.030Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:30:00.139Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.147Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.153Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.156Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.157Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.171Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.173Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:30:00.191Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.201Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.214Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.217Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.219Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.245Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.255Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.256Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.275Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:30:00.283Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.302Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.381Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.407Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:30:00.429Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.027Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.027Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.027Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.027Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T18:45:00.141Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.142Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.145Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.146Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.149Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.151Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.168Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T18:45:00.201Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.203Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.216Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.226Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.233Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.259Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.264Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.272Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.318Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.321Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T18:45:00.337Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.379Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.504Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T18:45:00.927Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.047Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.048Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.050Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.050Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.051Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.052Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.057Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.057Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.059Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.061Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.062Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.062Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.063Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.065Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.066Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.066Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.066Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.068Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.069Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.069Z - ⏱️ Running hourly indicators calculation
+2025-07-06T19:00:00.070Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.070Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.071Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.072Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.072Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.072Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.073Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.074Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.073Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.074Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.074Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.075Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.075Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.076Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.077Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.077Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.077Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.077Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.078Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.078Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.079Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.079Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.080Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.080Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.080Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.080Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.082Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.082Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.083Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.083Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.083Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.084Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.084Z - ✅ Indicators calculated for BMNR
+2025-07-06T19:00:00.084Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.085Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.086Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.086Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.086Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.086Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.087Z - ✅ Indicators calculated for RUN
+2025-07-06T19:00:00.087Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.088Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.088Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.088Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.089Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.089Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.089Z - ✅ Indicators calculated for TRIP
+2025-07-06T19:00:00.090Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.090Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.090Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.091Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.091Z - ✅ Indicators calculated for DDOG
+2025-07-06T19:00:00.092Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.092Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.093Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.093Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.093Z - ✅ Indicators calculated for SYM
+2025-07-06T19:00:00.093Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.094Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.095Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.095Z - ✅ Indicators calculated for PL
+2025-07-06T19:00:00.096Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.097Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.097Z - ✅ Indicators calculated for TMC
+2025-07-06T19:00:00.097Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.097Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.098Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.099Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.099Z - ✅ Indicators calculated for RNW
+2025-07-06T19:00:00.099Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.099Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.101Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.102Z - ✅ Indicators calculated for GDS
+2025-07-06T19:00:00.102Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.102Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.103Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T19:00:00.103Z - ✅ Indicators calculated for VNET
+2025-07-06T19:00:00.105Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.106Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:00:00.108Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.109Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.111Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.113Z - ⚡ Generating Crypto AI Picks with Buy/Sell Bias
+2025-07-06T19:00:00.113Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.115Z - ✅ Crypto AI Picks generated: 0 Buy, 0 Sell, 0 Neutral
+2025-07-06T19:00:00.191Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.209Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.220Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.238Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.279Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.280Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.286Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.287Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:00:00.287Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.288Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.333Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.341Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.343Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.360Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.391Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.392Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.395Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:00:00.396Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.448Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.469Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:00:00.503Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:15:00.133Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.135Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.136Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.137Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.146Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.195Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.206Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.215Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.216Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.256Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.257Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.258Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.263Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.269Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.287Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.313Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.314Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.314Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:15:00.338Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:15:00.420Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:15:00.479Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:30:00.149Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.153Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.168Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.168Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.173Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.194Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.194Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:30:00.221Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.229Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.232Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.249Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.259Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.260Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.262Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:30:00.286Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.288Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.314Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.318Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.324Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.347Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:30:00.354Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.035Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.034Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.035Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T19:45:00.163Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.166Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.166Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.167Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.185Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.222Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.222Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.223Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.224Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.225Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.241Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.280Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.280Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.282Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.283Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.289Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.293Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.350Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T19:45:00.402Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T19:45:00.421Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T19:45:00.478Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.030Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.033Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.037Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.038Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.038Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.039Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.040Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.041Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.041Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.042Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.042Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.042Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.044Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.045Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.045Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.046Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.047Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.047Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.048Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.049Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.049Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.050Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.051Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.051Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.051Z - ⏱️ Running hourly indicators calculation
+2025-07-06T20:00:00.051Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.052Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.052Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.052Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.053Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.053Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.053Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.053Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.054Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.054Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.054Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.055Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.055Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.055Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.056Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.056Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.056Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.057Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.057Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.057Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.058Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.058Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.058Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.059Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.059Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.060Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.060Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.060Z - ✅ Indicators calculated for BMNR
+2025-07-06T20:00:00.061Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.061Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.061Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.061Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.062Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.062Z - ✅ Indicators calculated for RUN
+2025-07-06T20:00:00.062Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.063Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.063Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.064Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.064Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.064Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.064Z - ✅ Indicators calculated for TRIP
+2025-07-06T20:00:00.065Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.065Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.066Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.066Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.066Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.066Z - ✅ Indicators calculated for DDOG
+2025-07-06T20:00:00.067Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.067Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.067Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.068Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.068Z - ✅ Indicators calculated for SYM
+2025-07-06T20:00:00.069Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.069Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.069Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.069Z - ✅ Indicators calculated for PL
+2025-07-06T20:00:00.069Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T20:00:00.070Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.071Z - ✅ Indicators calculated for TMC
+2025-07-06T20:00:00.072Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.072Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.072Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.072Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:00:00.072Z - ✅ Indicators calculated for RNW
+2025-07-06T20:00:00.075Z - ✅ Indicators calculated for GDS
+2025-07-06T20:00:00.076Z - ✅ Indicators calculated for VNET
+2025-07-06T20:00:00.167Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.174Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.178Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.178Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.180Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.182Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.187Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:00:00.226Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.234Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.235Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.240Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.243Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.280Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.282Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:00:00.295Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.297Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.302Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.336Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.349Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.387Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:00:00.399Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.022Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:15:00.146Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.154Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.176Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.214Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.219Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.224Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.229Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.246Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.262Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.272Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:15:00.285Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.295Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.306Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.308Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.328Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.339Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.352Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.354Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.400Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:15:00.426Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:15:00.514Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.007Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.007Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.009Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.016Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.017Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.018Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.025Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:30:00.111Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.118Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.130Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.153Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.169Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.179Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.181Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.190Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.190Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:30:00.224Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.238Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.252Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.255Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.263Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:30:00.284Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.302Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.327Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.329Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.336Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.464Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:30:00.508Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.023Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T20:45:00.144Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:00.153Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:00.155Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:00.191Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:00.195Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:00.210Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:00.246Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:00.250Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:00.262Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:00.262Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:00.303Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:00.312Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:00.331Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:00.337Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:00.381Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:02.294Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:03.231Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:05.640Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T20:45:05.909Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T20:45:07.326Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T20:45:10.068Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.021Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.025Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.030Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.031Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.032Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.033Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.035Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.036Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.036Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.037Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.038Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.039Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.040Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.041Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.041Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.041Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.041Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.041Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.041Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.045Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.046Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.047Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.047Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.048Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.048Z - ⏱️ Running hourly indicators calculation
+2025-07-06T21:00:00.049Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.049Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.049Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.050Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.050Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.050Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.051Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.051Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.052Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.052Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.052Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.053Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.053Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.054Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.053Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.054Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.054Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.055Z - ✅ Indicators calculated for BMNR
+2025-07-06T21:00:00.055Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.055Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.055Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.056Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.056Z - ✅ Indicators calculated for RUN
+2025-07-06T21:00:00.057Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.057Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.058Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.058Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.058Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.058Z - ✅ Indicators calculated for TRIP
+2025-07-06T21:00:00.059Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.059Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.059Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.060Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.060Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.060Z - ✅ Indicators calculated for DDOG
+2025-07-06T21:00:00.060Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.061Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.062Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.063Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.063Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.064Z - ✅ Indicators calculated for SYM
+2025-07-06T21:00:00.064Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.064Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.065Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.065Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.066Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.066Z - ✅ Indicators calculated for PL
+2025-07-06T21:00:00.067Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.067Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.067Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.068Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.068Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.068Z - ✅ Indicators calculated for TMC
+2025-07-06T21:00:00.068Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.069Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.069Z - ✅ Indicators calculated for RNW
+2025-07-06T21:00:00.069Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.070Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.070Z - ✅ Indicators calculated for GDS
+2025-07-06T21:00:00.071Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.071Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.071Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.071Z - ✅ Indicators calculated for VNET
+2025-07-06T21:00:00.072Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:00:00.076Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.077Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T21:00:00.151Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.170Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.172Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.172Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.185Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.224Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.225Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.227Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.230Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.238Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.240Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:00:00.279Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.280Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.282Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.283Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.301Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.335Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.336Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.336Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:00:00.346Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:00:00.410Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.028Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.029Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:15:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.171Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.196Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.198Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.218Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.224Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.231Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.249Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:00.251Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.255Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.278Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.307Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.307Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:00.314Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.320Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.333Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:00.366Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:15:05.427Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:15:11.454Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:15:12.172Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.018Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:30:00.123Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.126Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.127Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.128Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.130Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.133Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.135Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:30:00.179Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.181Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.184Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.187Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.188Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.189Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.234Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.237Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.241Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.242Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.296Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.298Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:30:00.349Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:30:00.406Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.032Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T21:45:00.144Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.147Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.150Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.155Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.185Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.211Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:00.223Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.223Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.224Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.244Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.246Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.283Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.290Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.291Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.303Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:00.325Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.342Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:00.397Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T21:45:15.197Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T21:45:31.782Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T21:45:42.811Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.029Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.030Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.032Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.033Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.035Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.036Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.037Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.038Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.038Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.039Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.040Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.040Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.040Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.041Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.041Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.042Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.043Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.043Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.043Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.044Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.045Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.045Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.045Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.046Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.046Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.047Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.047Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.047Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.047Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.048Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.048Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.048Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.048Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.049Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.049Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.049Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.050Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.050Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.051Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.051Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.051Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.051Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.052Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.052Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.052Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.053Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.053Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.054Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.054Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.054Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.054Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.055Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.055Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.056Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.056Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.057Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.057Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.057Z - ⏱️ Running hourly indicators calculation
+2025-07-06T22:00:00.058Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.060Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.060Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.060Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:00:00.061Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.062Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.063Z - ✅ Indicators calculated for BMNR
+2025-07-06T22:00:00.063Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.063Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.064Z - ✅ Indicators calculated for RUN
+2025-07-06T22:00:00.065Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.065Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.066Z - ✅ Indicators calculated for TRIP
+2025-07-06T22:00:00.067Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.068Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.068Z - ✅ Indicators calculated for DDOG
+2025-07-06T22:00:00.068Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.069Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.069Z - ✅ Indicators calculated for SYM
+2025-07-06T22:00:00.069Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.070Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.071Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.071Z - ✅ Indicators calculated for PL
+2025-07-06T22:00:00.072Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.073Z - ✅ Indicators calculated for TMC
+2025-07-06T22:00:00.073Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.073Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.074Z - ✅ Indicators calculated for RNW
+2025-07-06T22:00:00.074Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.074Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.075Z - ✅ Indicators calculated for GDS
+2025-07-06T22:00:00.076Z - ✅ Indicators calculated for VNET
+2025-07-06T22:00:00.076Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T22:00:00.156Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.160Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.160Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.178Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.211Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.213Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.213Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.248Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.260Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.269Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.294Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.313Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.319Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.322Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.331Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.370Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.396Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.399Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:00:00.429Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:00:00.485Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:00:00.540Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.012Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.026Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.027Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:15:00.118Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.118Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.120Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.120Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.128Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.158Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.159Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:15:00.173Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.174Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.175Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.196Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.203Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.215Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.215Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:15:00.229Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.250Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.259Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.269Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.290Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.294Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:15:00.347Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.020Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.044Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.044Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.044Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:30:00.132Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.141Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.142Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.148Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.151Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.164Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.180Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:30:00.187Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.195Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.199Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.202Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.207Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.225Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.244Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.254Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.259Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.277Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:30:00.281Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.290Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.308Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:30:00.337Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.014Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.017Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.019Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T22:45:00.119Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.125Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.133Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.140Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.141Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.153Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.182Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.192Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.196Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.205Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.214Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.222Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.226Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T22:45:00.245Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.249Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.281Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T22:45:00.285Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.308Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.321Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.334Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T22:45:00.420Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:00.042Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.043Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.045Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.045Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.045Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.048Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.048Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.048Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.050Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.051Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.051Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.053Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.053Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.054Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.055Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.055Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.056Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.057Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.057Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.058Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.058Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.059Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.059Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.059Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.060Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.060Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.060Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.061Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.060Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.061Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.061Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.062Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.062Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.063Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.063Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.063Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.064Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.064Z - ⏱️ Running hourly indicators calculation
+2025-07-06T23:00:00.064Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.064Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.065Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.065Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.066Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.066Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.066Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.067Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.067Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.067Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.068Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.068Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.068Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.069Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.069Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.069Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.070Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.070Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.070Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.071Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.071Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.071Z - ✅ Indicators calculated for BMNR
+2025-07-06T23:00:00.072Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.072Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.072Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.073Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.073Z - ✅ Indicators calculated for RUN
+2025-07-06T23:00:00.073Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.074Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.075Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.076Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.076Z - ✅ Indicators calculated for TRIP
+2025-07-06T23:00:00.077Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.077Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.077Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.078Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.078Z - ✅ Indicators calculated for DDOG
+2025-07-06T23:00:00.079Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.079Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.079Z - ✅ Indicators calculated for SYM
+2025-07-06T23:00:00.080Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.080Z - ✅ Indicators calculated for PL
+2025-07-06T23:00:00.081Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.081Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.082Z - ✅ Indicators calculated for TMC
+2025-07-06T23:00:00.083Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.083Z - ✅ Indicators calculated for RNW
+2025-07-06T23:00:00.084Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.084Z - ✅ Indicators calculated for GDS
+2025-07-06T23:00:00.085Z - ✅ Indicators calculated for VNET
+2025-07-06T23:00:00.086Z - ⏱️ Running hourly crypto indicators calculation
+2025-07-06T23:00:00.087Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.089Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:00:00.187Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.224Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.258Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.288Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.366Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.367Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:00.405Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:00.417Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:00.450Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:00.536Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:00.582Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:00.595Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:00.602Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:00.742Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:00.768Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:00.965Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:01.047Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:01.572Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:00:30.824Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:00:37.242Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:00:42.062Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.021Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:15:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.165Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.182Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.184Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.212Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.222Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.237Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.243Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.272Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.279Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.308Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.310Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.327Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.353Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.442Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.535Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:00.655Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:15:00.792Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.793Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:15:00.850Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:15:01.197Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.012Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.012Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.013Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.015Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.017Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.017Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.017Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:30:00.155Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.219Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.228Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.263Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.267Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.303Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.306Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.321Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.332Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.379Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.407Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.414Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:30:00.418Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.429Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.437Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.450Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.462Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.480Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:30:00.496Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.582Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:30:00.594Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.024Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.025Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.042Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.043Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.043Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.043Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.043Z - ⏱️ Running 15-min crypto fetch
+2025-07-06T23:45:00.131Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.143Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.162Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.165Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.208Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.226Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.252Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.257Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.263Z - ❌ Error fetching crypto for crypto_volume: Request failed with status code 404
+2025-07-06T23:45:00.263Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.272Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.290Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.311Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.327Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.337Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.354Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.355Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
+2025-07-06T23:45:00.368Z - ❌ Error fetching crypto for crypto_gainers: Request failed with status code 404
+2025-07-06T23:45:00.437Z - ❌ Error fetching crypto for crypto_trending: Request failed with status code 404
